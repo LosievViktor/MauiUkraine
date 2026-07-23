@@ -1,9 +1,7 @@
 # MAUI Controls Showcase
 
 A single-project **.NET 8 MAUI** app whose only job is to demonstrate the breadth of what
-.NET MAUI can do - one shared C#/XAML codebase targeting Android, iOS, Mac Catalyst and
-Windows. It's built with **Shell navigation** (flyout menu) and the **MVVM** pattern via
-**CommunityToolkit.Mvvm**, plus **CommunityToolkit.Maui** for Toast/Snackbar.
+.NET MAUI can do, with Ukrainian language user interface.
 
 ## What's inside
 
