@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             x:Class="MauiControlsShowcase.Views.SelectionControlsPage"
+             x:DataType="vm:SelectionControlsViewModel"
+             Title="Елементи вибору">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label Text="Елементи вибору" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="Switch, CheckBox, RadioButton, Picker, DatePicker, TimePicker, Stepper і Slider."
+                   Style="{StaticResource PageSubtitleLabel}" />
+
+            <Label Text="Switch" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <Grid ColumnDefinitions="*,Auto">
+                    <Label Grid.Column="0" VerticalOptions="Center">
+                        <Label.Text>
+                            <MultiBinding StringFormat="Сповіщення {0}">
+                                <Binding Path="IsSwitchOn" Converter="{StaticResource BoolToOnOffConverter}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                    <Switch Grid.Column="1" IsToggled="{Binding IsSwitchOn}" />
+                </Grid>
+            </Border>
+
+            <Label Text="CheckBox" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <HorizontalStackLayout Spacing="8">
+                    <CheckBox IsChecked="{Binding IsChecked}" />
+                    <Label Text="Я розумію, що це демонстраційний застосунок" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label Text="RadioButton" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="6"
+                                     RadioButtonGroup.GroupName="favoriteColorGroup"
+                                     RadioButtonGroup.SelectedValue="{Binding SelectedColor}">
+                    <RadioButton Content="Червоний" Value="Red" />
+                    <RadioButton Content="Зелений" Value="Green" />
+                    <RadioButton Content="Синій" Value="Blue" />
+                    <Label Style="{StaticResource CaptionLabel}" Margin="0,4,0,0">
+                        <Label.Text>
+                            <MultiBinding StringFormat="Обрано: {0}">
+                                <Binding Path="SelectedColor" Converter="{StaticResource ColorNameConverter}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Picker" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="6">
+                    <Picker Title="Цільова платформа" ItemsSource="{Binding Platforms}" SelectedItem="{Binding SelectedPlatform}" />
+                    <Label Text="{Binding SelectedPlatform, StringFormat='Збірка для: {0}'}" Style="{StaticResource CaptionLabel}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="DatePicker &amp; TimePicker" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" RowSpacing="10" ColumnSpacing="10">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Дата:" VerticalOptions="Center" />
+                        <DatePicker Grid.Row="0" Grid.Column="1" Date="{Binding SelectedDate}" HorizontalOptions="Start" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Час:" VerticalOptions="Center" />
+                        <TimePicker Grid.Row="1" Grid.Column="1" Time="{Binding SelectedTime}" HorizontalOptions="Start" />
+                    </Grid>
+                    <Label Style="{StaticResource CaptionLabel}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding SelectedDate, StringFormat='Заплановано на {0:D}'}" />
+                                <Span Text=" о " />
+                                <Span Text="{Binding SelectedTime, StringFormat='{0:hh\:mm}'}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Stepper" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <Grid ColumnDefinitions="*,Auto,Auto">
+                    <Label Grid.Column="0" Text="{Binding StepperValue, StringFormat='Розмір команди: {0}'}" VerticalOptions="Center" />
+                    <Stepper Grid.Column="2" Value="{Binding StepperValue}" Minimum="1" Maximum="10" Increment="1" />
+                </Grid>
+            </Border>
+
+            <Label Text="Slider" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="6">
+                    <Slider Minimum="0" Maximum="1" Value="{Binding SliderValue}" />
+                    <Label Text="{Binding SliderValue, StringFormat='Гучність: {0:P0}'}" Style="{StaticResource CaptionLabel}" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

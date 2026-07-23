@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MauiControlsShowcase.Views"
+       Title="Вітрина елементів MAUI"
+       FlyoutBehavior="Flyout"
+       x:Class="MauiControlsShowcase.AppShell">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="20,50,20,20" RowSpacing="4" BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="🧩" FontSize="40" />
+            <Label Grid.Row="1" Text="Вітрина елементів MAUI" FontSize="20" FontAttributes="Bold" TextColor="White" />
+            <Label Grid.Row="2" Text="Жива колекція можливостей інтерфейсу .NET MAUI" FontSize="12" TextColor="#DCD6FF" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Головна">
+        <ShellContent Title="Головна"
+                      Route="home"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Кнопки та поля вводу">
+        <ShellContent Title="Кнопки та поля вводу"
+                      Route="buttons"
+                      ContentTemplate="{DataTemplate views:ButtonsAndInputsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Елементи вибору">
+        <ShellContent Title="Елементи вибору"
+                      Route="selection"
+                      ContentTemplate="{DataTemplate views:SelectionControlsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Макети">
+        <ShellContent Title="Макети"
+                      Route="layouts"
+                      ContentTemplate="{DataTemplate views:LayoutsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Колекції">
+        <ShellContent Title="Колекції"
+                      Route="collections"
+                      ContentTemplate="{DataTemplate views:CollectionsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Індикатори та прогрес">
+        <ShellContent Title="Індикатори та прогрес"
+                      Route="indicators"
+                      ContentTemplate="{DataTemplate views:IndicatorsAndProgressPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Графіка та малювання">
+        <ShellContent Title="Графіка та малювання"
+                      Route="graphics"
+                      ContentTemplate="{DataTemplate views:GraphicsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Жести та анімація">
+        <ShellContent Title="Жести та анімація"
+                      Route="gestures"
+                      ContentTemplate="{DataTemplate views:GesturesAndAnimationPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Стилі та теми">
+        <ShellContent Title="Стилі та теми"
+                      Route="styling"
+                      ContentTemplate="{DataTemplate views:StylingAndThemePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Сповіщення та діалоги">
+        <ShellContent Title="Сповіщення та діалоги"
+                      Route="alerts"
+                      ContentTemplate="{DataTemplate views:AlertsAndDialogsPage}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="20" ColumnSpacing="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="v1.0 · net10.0-maui" FontSize="11" TextColor="Gray" VerticalOptions="Center" />
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             x:Class="MauiControlsShowcase.Views.LayoutsPage"
+             x:DataType="vm:LayoutsViewModel"
+             Title="Макети">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label Text="Макети" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="Grid, StackLayout, FlexLayout, AbsoluteLayout і ScrollView — контейнери, з яких побудовано весь цей застосунок."
+                   Style="{StaticResource PageSubtitleLabel}" />
+
+            <Label Text="Grid" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <Grid RowDefinitions="60,60" ColumnDefinitions="*,*,*" RowSpacing="6" ColumnSpacing="6">
+                    <BoxView Grid.Row="0" Grid.Column="0" Color="{StaticResource Primary}" />
+                    <BoxView Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Color="{StaticResource Accent}" />
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Color="{StaticResource Secondary}" />
+                    <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Grid.RowSpan / Grid.ColumnSpan дозволяють об'єднувати комірки, як у HTML-таблиці."
+                           VerticalOptions="Center" Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" />
+                </Grid>
+            </Border>
+
+            <Label Text="VerticalStackLayout / HorizontalStackLayout" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Вертикально:" Style="{StaticResource CaptionLabel}" />
+                    <VerticalStackLayout Spacing="4">
+                        <BoxView HeightRequest="16" Color="{StaticResource Primary}" />
+                        <BoxView HeightRequest="16" Color="{StaticResource Accent}" />
+                        <BoxView HeightRequest="16" Color="{StaticResource Secondary}" />
+                    </VerticalStackLayout>
+                    <Label Text="Горизонтально:" Style="{StaticResource CaptionLabel}" Margin="0,8,0,0" />
+                    <HorizontalStackLayout Spacing="4">
+                        <BoxView WidthRequest="40" HeightRequest="30" Color="{StaticResource Primary}" />
+                        <BoxView WidthRequest="40" HeightRequest="30" Color="{StaticResource Accent}" />
+                        <BoxView WidthRequest="40" HeightRequest="30" Color="{StaticResource Secondary}" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="FlexLayout" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="8">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0" Text="Переносить елементи, як CSS flexbox. Перемкнути напрямок:" VerticalOptions="Center" />
+                        <Switch Grid.Column="1" IsToggled="{Binding FlexIsColumn}" />
+                    </Grid>
+                    <FlexLayout BindableLayout.ItemsSource="{Binding Chips}"
+                                Wrap="Wrap"
+                                Direction="{Binding FlexIsColumn, Converter={StaticResource BoolToFlexDirectionConverter}}"
+                                JustifyContent="Start">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <Border Stroke="{StaticResource Primary}" StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="12,6" Margin="4">
+                                    <Label Text="{Binding .}" TextColor="{StaticResource Primary}" FontSize="13" />
+                                </Border>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="AbsoluteLayout" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <AbsoluteLayout HeightRequest="140">
+                    <BoxView Color="{StaticResource Secondary}"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1"
+                             AbsoluteLayout.LayoutFlags="All" />
+                    <BoxView Color="{StaticResource Primary}"
+                             AbsoluteLayout.LayoutBounds="0.5,0.5,80,80"
+                             AbsoluteLayout.LayoutFlags="PositionProportional" />
+                    <Label Text="Позиціонування через пропорційні AbsoluteLayout.LayoutBounds"
+                           TextColor="White"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,80,80"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="11"
+                           Padding="6" />
+                </AbsoluteLayout>
+            </Border>
+
+            <Label Text="ScrollView" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+                    <HorizontalStackLayout Spacing="8">
+                        <Border StrokeShape="RoundRectangle 12" WidthRequest="90" HeightRequest="60" BackgroundColor="{StaticResource Primary}">
+                            <Label Text="1" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 12" WidthRequest="90" HeightRequest="60" BackgroundColor="{StaticResource Accent}">
+                            <Label Text="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 12" WidthRequest="90" HeightRequest="60" BackgroundColor="{StaticResource Secondary}">
+                            <Label Text="3" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 12" WidthRequest="90" HeightRequest="60" BackgroundColor="{StaticResource Primary}">
+                            <Label Text="4" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 12" WidthRequest="90" HeightRequest="60" BackgroundColor="{StaticResource Accent}">
+                            <Label Text="5" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

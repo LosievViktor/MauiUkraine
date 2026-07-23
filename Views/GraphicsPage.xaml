@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             x:Class="MauiControlsShowcase.Views.GraphicsPage"
+             x:DataType="vm:GraphicsViewModel"
+             Title="Графіка та малювання">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label Text="Графіка та малювання" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="GraphicsView + Microsoft.Maui.Graphics дозволяють малювати довільний векторний контент — діаграми, індикатори, власні елементи — одним API на всіх платформах."
+                   Style="{StaticResource PageSubtitleLabel}" />
+
+            <Label Text="Власна стовпчикова діаграма (IDrawable)" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <GraphicsView Drawable="{Binding BarChart}" HeightRequest="200" />
+            </Border>
+
+            <Label Text="Живий аналоговий годинник (IDrawable + Invalidate)" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}" HorizontalOptions="Center">
+                <GraphicsView x:Name="ClockView" Drawable="{Binding Clock}" HeightRequest="180" WidthRequest="180" />
+            </Border>
+
+            <Label Text="Image" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}" Padding="0">
+                <Image Source="https://picsum.photos/seed/mauigraphics/700/260" Aspect="AspectFill" HeightRequest="160" />
+            </Border>
+            <Label Text="Image підтримує файли з Resources/Images, потоки та віддалені UriImageSource, як тут."
+                   Style="{StaticResource CaptionLabel}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

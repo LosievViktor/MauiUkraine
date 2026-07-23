@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsShowcase.Views.DemoModalPage"
+             Title="Модальна сторінка">
+
+    <Grid Padding="24" RowDefinitions="*,Auto" RowSpacing="20">
+        <VerticalStackLayout Grid.Row="0" Spacing="10" VerticalOptions="Center">
+            <Label Text="📄 Модальна навігація" Style="{StaticResource PageTitleLabel}" HorizontalTextAlignment="Center" />
+            <Label Text="Цю сторінку відкрито через Navigation.PushModalAsync — вона перекриває весь екран і ховає flyout Shell, доки не буде закрита. Саме так роблять вхід, оформлення замовлення або майстер налаштувань."
+                   Style="{StaticResource PageSubtitleLabel}" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
+        </VerticalStackLayout>
+        <Button Grid.Row="1" Text="Закрити" Clicked="OnCloseClicked" HorizontalOptions="Fill" />
+    </Grid>
+
+</ContentPage>

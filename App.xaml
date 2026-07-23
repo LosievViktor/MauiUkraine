@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MauiControlsShowcase.Converters"
+             x:Class="MauiControlsShowcase.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Converters, shared app-wide -->
+            <converters:PriorityToColorConverter x:Key="PriorityToColorConverter" />
+            <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:BoolToStrikethroughConverter x:Key="BoolToStrikethroughConverter" />
+            <converters:BoolToFlexDirectionConverter x:Key="BoolToFlexDirectionConverter" />
+            <converters:BoolToDoneOpacityConverter x:Key="BoolToDoneOpacityConverter" />
+            <converters:PriorityToDisplayConverter x:Key="PriorityToDisplayConverter" />
+            <converters:BoolToOnOffConverter x:Key="BoolToOnOffConverter" />
+            <converters:ColorNameConverter x:Key="ColorNameConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

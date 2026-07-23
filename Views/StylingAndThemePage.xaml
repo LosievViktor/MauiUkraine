@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             x:Class="MauiControlsShowcase.Views.StylingAndThemePage"
+             x:DataType="vm:StylingAndThemeViewModel"
+             Title="Стилі та теми">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label Text="Стилі та теми" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="ResourceDictionary, неявні та явні Style, AppThemeBinding, DynamicResource і VisualStateManager."
+                   Style="{StaticResource PageSubtitleLabel}" />
+
+            <Label Text="Світла / темна тема" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="8"
+                                     RadioButtonGroup.GroupName="themeGroup"
+                                     RadioButtonGroup.SelectedValue="{Binding SelectedTheme}">
+                    <Label Text="Кожна картка на кожній сторінці використовує AppThemeBinding для кольорів — перемкніть тему і побачите, як перемальовується весь застосунок." Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" />
+                    <HorizontalStackLayout Spacing="16">
+                        <RadioButton Content="Системна" Value="System" />
+                        <RadioButton Content="Світла" Value="Light" />
+                        <RadioButton Content="Темна" Value="Dark" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="StaticResource vs DynamicResource" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Натисніть кнопку, щоб змінити спільний колір «Accent» під час роботи застосунку." Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <VerticalStackLayout Grid.Column="0" Spacing="4" HorizontalOptions="Center">
+                            <BoxView WidthRequest="70" HeightRequest="70" CornerRadius="12" Color="{StaticResource Accent}" />
+                            <Label Text="StaticResource" FontSize="12" HorizontalOptions="Center" />
+                            <Label Text="(зафіксовано при завантаженні)" Style="{StaticResource CaptionLabel}" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
+                            <BoxView WidthRequest="70" HeightRequest="70" CornerRadius="12" Color="{DynamicResource Accent}" />
+                            <Label Text="DynamicResource" FontSize="12" HorizontalOptions="Center" />
+                            <Label Text="(оновлюється наживо)" Style="{StaticResource CaptionLabel}" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Grid>
+                    <Button Text="Змінити акцентний колір" Command="{Binding CycleAccentColorCommand}" HorizontalOptions="Start" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="VisualStateManager" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="Кожна Button на цій сторінці вже реагує на стани Pressed/Disabled через глобальний стиль VisualStateManager. Це серце має власні стани Normal/Liked:" Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center" />
+                    <Border x:Name="LikeBorder" WidthRequest="70" HeightRequest="70" StrokeShape="RoundRectangle 35" BackgroundColor="{StaticResource Gray100}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLikeTapped" />
+                        </Border.GestureRecognizers>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="LikeStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{StaticResource Gray100}" />
+                                            <Setter Property="Scale" Value="1.0" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Liked">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#FFE3EC" />
+                                            <Setter Property="Scale" Value="1.08" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                        <Label x:Name="LikeLabel" Text="🤍" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

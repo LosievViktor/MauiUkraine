@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             x:Class="MauiControlsShowcase.Views.GesturesAndAnimationPage"
+             x:DataType="vm:GesturesAndAnimationViewModel"
+             Title="Жести та анімація">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="8">
+
+            <Label Text="Жести та анімація" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="Розпізнавачі Tap, double-tap, pinch, pan і swipe, а також анімації ViewExtensions (FadeTo, RotateTo, ScaleTo, TranslateTo)."
+                   Style="{StaticResource PageSubtitleLabel}" />
+
+            <Label Text="Жести Tap і Double-tap" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Border x:Name="TapTarget"
+                            WidthRequest="100" HeightRequest="100"
+                            StrokeShape="RoundRectangle 20"
+                            BackgroundColor="{StaticResource Primary}"
+                            HorizontalOptions="Center">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnSingleTapped" />
+                            <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnDoubleTapped" />
+                        </Border.GestureRecognizers>
+                        <Label Text="Торкніться" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Border>
+                    <Label Text="{Binding TapCount, StringFormat='Одинарні торкання: {0} (пульсація)'}" Style="{StaticResource CaptionLabel}" />
+                    <Label Text="{Binding DoubleTapCount, StringFormat='Подвійні торкання: {0} (обертання на 360°)'}" Style="{StaticResource CaptionLabel}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Жест Pinch" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <BoxView x:Name="PinchTarget"
+                             WidthRequest="90" HeightRequest="90"
+                             CornerRadius="12"
+                             Color="{StaticResource Tertiary}"
+                             HorizontalOptions="Center">
+                        <BoxView.GestureRecognizers>
+                            <PinchGestureRecognizer PinchUpdated="OnPinchUpdated" />
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                    <Label Text="{Binding PinchStatus}" Style="{StaticResource CaptionLabel}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Жест Pan" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}" HeightRequest="140">
+                <Grid>
+                    <BoxView x:Name="PanTarget"
+                             WidthRequest="60" HeightRequest="60"
+                             CornerRadius="30"
+                             Color="{StaticResource Accent}"
+                             HorizontalOptions="Center" VerticalOptions="Center">
+                        <BoxView.GestureRecognizers>
+                            <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                    <Label Text="{Binding PanStatus}" Style="{StaticResource CaptionLabel}" VerticalOptions="End" HorizontalOptions="Center" />
+                </Grid>
+            </Border>
+
+            <Label Text="Жест Swipe" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="8">
+                    <Border x:Name="SwipeTarget" Padding="16" StrokeShape="RoundRectangle 12" BackgroundColor="{StaticResource Secondary}">
+                        <Border.GestureRecognizers>
+                            <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped" />
+                            <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped" />
+                        </Border.GestureRecognizers>
+                        <Label Text="Проведіть картку ліворуч або праворуч" HorizontalOptions="Center" />
+                    </Border>
+                    <Label Text="{Binding SwipeStatus}" Style="{StaticResource CaptionLabel}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Анімації ViewExtensions" Style="{StaticResource SectionHeaderLabel}" />
+            <Border Style="{StaticResource CardBorder}">
+                <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                    <Border x:Name="AnimTarget"
+                            WidthRequest="80" HeightRequest="80"
+                            StrokeShape="RoundRectangle 16"
+                            BackgroundColor="{StaticResource Primary}"
+                            HorizontalOptions="Center" />
+                    <FlexLayout Wrap="Wrap" JustifyContent="Center">
+                        <Button Text="Згасання" Clicked="OnFadeClicked" Margin="4" />
+                        <Button Text="Обертання" Clicked="OnRotateClicked" Margin="4" />
+                        <Button Text="Масштаб" Clicked="OnScaleClicked" Margin="4" />
+                        <Button Text="Ковзання" Clicked="OnTranslateClicked" Margin="4" />
+                        <Button Text="Комбінована" Clicked="OnCombinedClicked" Margin="4" />
+                    </FlexLayout>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
