@@ -1,5 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MauiControlsShowcase.Resources.Strings;
 
 namespace MauiControlsShowcase.ViewModels;
 
@@ -17,7 +18,12 @@ public partial class IndicatorsAndProgressViewModel : BaseViewModel
 
 	public IndicatorsAndProgressViewModel()
 	{
-		Title = "Індикатори та прогрес";
+		ApplyLocalization();
+	}
+
+	protected override void ApplyLocalization()
+	{
+		Title = AppResources.Get("Indicators_Title");
 	}
 
 	[RelayCommand(CanExecute = nameof(CanStartUpload))]

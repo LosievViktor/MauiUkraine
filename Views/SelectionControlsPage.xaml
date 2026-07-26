@@ -2,15 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
+             xmlns:services="clr-namespace:MauiControlsShowcase.Services"
              x:Class="MauiControlsShowcase.Views.SelectionControlsPage"
              x:DataType="vm:SelectionControlsViewModel"
-             Title="Елементи вибору">
+             Title="{loc:Translate Selection_Title}">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
 
-            <Label Text="Елементи вибору" Style="{StaticResource PageTitleLabel}" />
-            <Label Text="Switch, CheckBox, RadioButton, Picker, DatePicker, TimePicker, Stepper і Slider."
+            <Label Text="{loc:Translate Selection_Title}" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="{loc:Translate Selection_Subtitle}"
                    Style="{StaticResource PageSubtitleLabel}" />
 
             <Label Text="Switch" Style="{StaticResource SectionHeaderLabel}" />
@@ -18,8 +20,9 @@
                 <Grid ColumnDefinitions="*,Auto">
                     <Label Grid.Column="0" VerticalOptions="Center">
                         <Label.Text>
-                            <MultiBinding StringFormat="Сповіщення {0}">
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_NotificationsFormat">
                                 <Binding Path="IsSwitchOn" Converter="{StaticResource BoolToOnOffConverter}" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
                             </MultiBinding>
                         </Label.Text>
                     </Label>
@@ -31,7 +34,7 @@
             <Border Style="{StaticResource CardBorder}">
                 <HorizontalStackLayout Spacing="8">
                     <CheckBox IsChecked="{Binding IsChecked}" />
-                    <Label Text="Я розумію, що це демонстраційний застосунок" VerticalOptions="Center" />
+                    <Label Text="{loc:Translate Selection_CheckboxLabel}" VerticalOptions="Center" />
                 </HorizontalStackLayout>
             </Border>
 
@@ -40,13 +43,14 @@
                 <VerticalStackLayout Spacing="6"
                                      RadioButtonGroup.GroupName="favoriteColorGroup"
                                      RadioButtonGroup.SelectedValue="{Binding SelectedColor}">
-                    <RadioButton Content="Червоний" Value="Red" />
-                    <RadioButton Content="Зелений" Value="Green" />
-                    <RadioButton Content="Синій" Value="Blue" />
+                    <RadioButton Content="{loc:Translate Selection_Red}" Value="Red" />
+                    <RadioButton Content="{loc:Translate Selection_Green}" Value="Green" />
+                    <RadioButton Content="{loc:Translate Selection_Blue}" Value="Blue" />
                     <Label Style="{StaticResource CaptionLabel}" Margin="0,4,0,0">
                         <Label.Text>
-                            <MultiBinding StringFormat="Обрано: {0}">
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_SelectedFormat">
                                 <Binding Path="SelectedColor" Converter="{StaticResource ColorNameConverter}" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
                             </MultiBinding>
                         </Label.Text>
                     </Label>
@@ -56,8 +60,15 @@
             <Label Text="Picker" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="6">
-                    <Picker Title="Цільова платформа" ItemsSource="{Binding Platforms}" SelectedItem="{Binding SelectedPlatform}" />
-                    <Label Text="{Binding SelectedPlatform, StringFormat='Збірка для: {0}'}" Style="{StaticResource CaptionLabel}" />
+                    <Picker Title="{loc:Translate Selection_PlatformTitle}" ItemsSource="{Binding Platforms}" SelectedItem="{Binding SelectedPlatform}" />
+                    <Label Style="{StaticResource CaptionLabel}">
+                        <Label.Text>
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_BuildForFormat">
+                                <Binding Path="SelectedPlatform" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
                 </VerticalStackLayout>
             </Border>
 
@@ -65,27 +76,26 @@
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="10">
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" RowSpacing="10" ColumnSpacing="10">
-                        <Label Grid.Row="0" Grid.Column="0" Text="Дата:" VerticalOptions="Center" />
+                        <Label Grid.Row="0" Grid.Column="0" Text="{loc:Translate Selection_Date}" VerticalOptions="Center" />
                         <DatePicker Grid.Row="0" Grid.Column="1" Date="{Binding SelectedDate}" HorizontalOptions="Start" />
-                        <Label Grid.Row="1" Grid.Column="0" Text="Час:" VerticalOptions="Center" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="{loc:Translate Selection_Time}" VerticalOptions="Center" />
                         <TimePicker Grid.Row="1" Grid.Column="1" Time="{Binding SelectedTime}" HorizontalOptions="Start" />
                     </Grid>
-                    <Label Style="{StaticResource CaptionLabel}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="{Binding SelectedDate, StringFormat='Заплановано на {0:D}'}" />
-                                <Span Text=" о " />
-                                <Span Text="{Binding SelectedTime, StringFormat='{0:hh\:mm}'}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                    <Label Text="{Binding ScheduledSummary}" Style="{StaticResource CaptionLabel}" />
                 </VerticalStackLayout>
             </Border>
 
             <Label Text="Stepper" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <Grid ColumnDefinitions="*,Auto,Auto">
-                    <Label Grid.Column="0" Text="{Binding StepperValue, StringFormat='Розмір команди: {0}'}" VerticalOptions="Center" />
+                    <Label Grid.Column="0" VerticalOptions="Center">
+                        <Label.Text>
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_TeamSizeFormat">
+                                <Binding Path="StepperValue" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
                     <Stepper Grid.Column="2" Value="{Binding StepperValue}" Minimum="1" Maximum="10" Increment="1" />
                 </Grid>
             </Border>
@@ -94,7 +104,14 @@
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="6">
                     <Slider Minimum="0" Maximum="1" Value="{Binding SliderValue}" />
-                    <Label Text="{Binding SliderValue, StringFormat='Гучність: {0:P0}'}" Style="{StaticResource CaptionLabel}" />
+                    <Label Style="{StaticResource CaptionLabel}">
+                        <Label.Text>
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_VolumeFormat">
+                                <Binding Path="SliderValue" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
                 </VerticalStackLayout>
             </Border>
 

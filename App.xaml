@@ -14,11 +14,11 @@
             <converters:PriorityToColorConverter x:Key="PriorityToColorConverter" />
             <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
             <converters:BoolToStrikethroughConverter x:Key="BoolToStrikethroughConverter" />
-            <converters:BoolToFlexDirectionConverter x:Key="BoolToFlexDirectionConverter" />
             <converters:BoolToDoneOpacityConverter x:Key="BoolToDoneOpacityConverter" />
             <converters:PriorityToDisplayConverter x:Key="PriorityToDisplayConverter" />
             <converters:BoolToOnOffConverter x:Key="BoolToOnOffConverter" />
             <converters:ColorNameConverter x:Key="ColorNameConverter" />
+            <converters:FormatConverter x:Key="FormatConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

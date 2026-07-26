@@ -10,6 +10,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
+		<NeutralResourcesLanguage>en</NeutralResourcesLanguage>
 		<Platforms>AnyCPU;x64;ARM64</Platforms>
 		<Platform Condition="'$(Platform)' == ''">x64</Platform>
 
@@ -52,6 +53,16 @@
 
 	<ItemGroup>
 		<Using Include="System.Collections.ObjectModel" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Manual AppResources.cs accessor; do not auto-generate a Designer class. -->
+		<EmbeddedResource Update="Resources\Strings\AppResources.resx">
+			<Generator></Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Resources\Strings\AppResources.uk.resx">
+			<DependentUpon>AppResources.resx</DependentUpon>
+		</EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>

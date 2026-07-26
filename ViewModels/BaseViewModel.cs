@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using MauiControlsShowcase.Services;
 
 namespace MauiControlsShowcase.ViewModels;
 
@@ -14,4 +15,17 @@ public abstract partial class BaseViewModel : ObservableObject
 
 	[ObservableProperty]
 	private bool isBusy;
+
+	protected BaseViewModel()
+	{
+		LocalizationResourceManager.Instance.CultureChanged += OnCultureChanged;
+	}
+
+	private void OnCultureChanged(object? sender, EventArgs e)
+		=> MainThread.BeginInvokeOnMainThread(ApplyLocalization);
+
+	/// <summary>Refresh titles and any culture-sensitive view-model text.</summary>
+	protected virtual void ApplyLocalization()
+	{
+	}
 }

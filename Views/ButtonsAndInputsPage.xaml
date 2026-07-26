@@ -2,73 +2,50 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
+             xmlns:services="clr-namespace:MauiControlsShowcase.Services"
              x:Class="MauiControlsShowcase.Views.ButtonsAndInputsPage"
              x:DataType="vm:ButtonsAndInputsViewModel"
-             Title="Кнопки та поля вводу">
+             Title="{loc:Translate Buttons_Title}"
+             AutomationProperties.AutomationId="page_buttons">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
 
-            <Label Text="Кнопки та поля вводу" Style="{StaticResource PageTitleLabel}" />
-            <Label Text="Button, ImageButton, Entry, Editor і SearchBar — основні інтерактивні елементи введення та команд MAUI."
+            <Label Text="{loc:Translate Buttons_Title}" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="{loc:Translate Buttons_Subtitle}"
                    Style="{StaticResource PageSubtitleLabel}" />
 
             <Label Text="Button" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
-                <VerticalStackLayout Spacing="12">
-                    <FlexLayout Wrap="Wrap" JustifyContent="Start" AlignItems="Center">
-                        <Button Text="Заповнена" Margin="0,0,10,10" />
-                        <Button Text="Контурна" Style="{StaticResource OutlineButton}" Margin="0,0,10,10" />
-                        <Button Text="Вимкнена" IsEnabled="False" Margin="0,0,10,10" />
-                    </FlexLayout>
-
-                    <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="10" VerticalOptions="Center">
-                        <Label Grid.Column="0" Text="{Binding Counter}" FontSize="22" FontAttributes="Bold" VerticalOptions="Center" WidthRequest="40" HorizontalTextAlignment="Center" />
-                        <Button Grid.Column="1" Text="+1" WidthRequest="56" Command="{Binding IncrementCommand}" />
-                        <BoxView Grid.Column="2" Color="Transparent" />
-                        <ActivityIndicator Grid.Column="3" IsRunning="{Binding IsCounterBusy}" IsVisible="{Binding IsCounterBusy}" />
-                    </Grid>
-                    <Button Text="Скинути лічильник" Style="{StaticResource OutlineButton}" Command="{Binding ResetCounterCommand}" HorizontalOptions="Start" />
-                </VerticalStackLayout>
-            </Border>
-
-            <Label Text="ImageButton" Style="{StaticResource SectionHeaderLabel}" />
-            <Border Style="{StaticResource CardBorder}">
-                <HorizontalStackLayout Spacing="16" VerticalOptions="Center">
-                    <ImageButton Command="{Binding IncrementCommand}"
-                                 BackgroundColor="{StaticResource Secondary}"
-                                 HeightRequest="56" WidthRequest="56"
-                                 Source="dotnet_bot.png"
-                                 CornerRadius="28">
-                        <ImageButton.Shadow>
-                            <Shadow Brush="{StaticResource PrimaryBrush}" Radius="12" Opacity="0.3" Offset="0,3" />
-                        </ImageButton.Shadow>
-                    </ImageButton>
-                    <Label Text="ImageButton працює як Button, але відображає будь-яке ImageSource — натисніть, і спрацює та сама IncrementCommand. Додайте dotnet_bot.png у Resources/Images, щоб побачити зображення; без нього це все одно працююче коло з тінню."
-                           Style="{StaticResource CaptionLabel}"
-                           VerticalOptions="Center" />
-                </HorizontalStackLayout>
+                <FlexLayout Wrap="Wrap" JustifyContent="Start" AlignItems="Center">
+                    <Button Text="{loc:Translate Buttons_Filled}" Margin="0,0,10,10" />
+                    <Button Text="{loc:Translate Buttons_Outline}" Style="{StaticResource OutlineButton}" Margin="0,0,10,10" />
+                    <Button Text="{loc:Translate Buttons_Disabled}" IsEnabled="False" Margin="0,0,10,10" />
+                </FlexLayout>
             </Border>
 
             <Label Text="Entry" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="10">
-                    <Entry Placeholder="Повне ім'я" Text="{Binding FullName}" ClearButtonVisibility="WhileEditing" />
-                    <Entry Placeholder="Пароль" Text="{Binding Password}" IsPassword="True" />
-                    <Entry Placeholder="Цифрова клавіатура" Keyboard="Numeric" />
-                    <Label Text="{Binding FullName, StringFormat='Привіт, {0}! (двостороння прив'язка в реальному часі)'}" />
+                    <Entry Placeholder="{loc:Translate Buttons_FullNamePlaceholder}" Text="{Binding FullName}" ClearButtonVisibility="WhileEditing" />
+                    <Entry Placeholder="{loc:Translate Buttons_PasswordPlaceholder}" Text="{Binding Password}" IsPassword="True" />
+                    <Entry Placeholder="{loc:Translate Buttons_NumericPlaceholder}" Keyboard="Numeric" />
+                    <Label>
+                        <Label.Text>
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Buttons_HelloFormat">
+                                <Binding Path="FullName" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
                 </VerticalStackLayout>
-            </Border>
-
-            <Label Text="Editor" Style="{StaticResource SectionHeaderLabel}" />
-            <Border Style="{StaticResource CardBorder}">
-                <Editor Text="{Binding Bio}" AutoSize="TextChanges" Placeholder="Багаторядковий опис..." />
             </Border>
 
             <Label Text="SearchBar" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="8">
-                    <SearchBar Placeholder="Пошук технологій MAUI..." Text="{Binding SearchQuery}" />
+                    <SearchBar Placeholder="{loc:Translate Buttons_SearchPlaceholder}" Text="{Binding SearchQuery}" />
                     <VerticalStackLayout BindableLayout.ItemsSource="{Binding SearchResults}" Spacing="4">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="x:String">

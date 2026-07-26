@@ -2,22 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
+             xmlns:services="clr-namespace:MauiControlsShowcase.Services"
              x:Class="MauiControlsShowcase.Views.IndicatorsAndProgressPage"
              x:DataType="vm:IndicatorsAndProgressViewModel"
-             Title="Індикатори та прогрес">
+             Title="{loc:Translate Indicators_Title}">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
 
-            <Label Text="Індикатори та прогрес" Style="{StaticResource PageTitleLabel}" />
-            <Label Text="ActivityIndicator, ProgressBar, BoxView, Border/Shadow і застарілий Frame — елементи, що показують «щось відбувається»."
+            <Label Text="{loc:Translate Indicators_Title}" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="{loc:Translate Indicators_Subtitle}"
                    Style="{StaticResource PageSubtitleLabel}" />
 
             <Label Text="ActivityIndicator" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                     <ActivityIndicator Grid.Column="0" IsRunning="{Binding IsActivityRunning}" />
-                    <Label Grid.Column="1" Text="Увімкнути індикатор" VerticalOptions="Center" />
+                    <Label Grid.Column="1" Text="{loc:Translate Indicators_Enable}" VerticalOptions="Center" />
                     <Switch Grid.Column="2" IsToggled="{Binding IsActivityRunning}" />
                 </Grid>
             </Border>
@@ -26,41 +28,17 @@
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="10">
                     <ProgressBar Progress="{Binding Progress}" />
-                    <Label Text="{Binding Progress, StringFormat='Прогрес завантаження: {0:P0}'}" Style="{StaticResource CaptionLabel}" />
-                    <Button Text="Симулювати завантаження" Command="{Binding StartUploadCommand}" HorizontalOptions="Start" />
+                    <Label Style="{StaticResource CaptionLabel}">
+                        <Label.Text>
+                            <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Indicators_ProgressFormat">
+                                <Binding Path="Progress" />
+                                <Binding Path="CultureVersion" Source="{x:Static services:LocalizationResourceManager.Instance}" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                    <Button Text="{loc:Translate Indicators_Simulate}" Command="{Binding StartUploadCommand}" HorizontalOptions="Start" />
                 </VerticalStackLayout>
             </Border>
-
-            <Label Text="BoxView" Style="{StaticResource SectionHeaderLabel}" />
-            <Border Style="{StaticResource CardBorder}">
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Як розділювач:" Style="{StaticResource CaptionLabel}" />
-                    <BoxView HeightRequest="1" Color="{StaticResource Gray200}" />
-                    <Label Text="Як індикатор статусу:" Style="{StaticResource CaptionLabel}" Margin="0,6,0,0" />
-                    <HorizontalStackLayout Spacing="8">
-                        <BoxView WidthRequest="12" HeightRequest="12" CornerRadius="6" Color="{StaticResource Success}" VerticalOptions="Center" />
-                        <Label Text="Онлайн" VerticalOptions="Center" />
-                    </HorizontalStackLayout>
-                    <Label Text="Як фігура (скруглений прямокутник):" Style="{StaticResource CaptionLabel}" Margin="0,6,0,0" />
-                    <BoxView HeightRequest="40" WidthRequest="120" CornerRadius="12" Color="{StaticResource Accent}" HorizontalOptions="Start" />
-                </VerticalStackLayout>
-            </Border>
-
-            <Label Text="Border, Shadow &amp; Frame" Style="{StaticResource SectionHeaderLabel}" />
-            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
-                <Border Grid.Column="0" Style="{StaticResource CardBorder}" Padding="12">
-                    <VerticalStackLayout Spacing="4">
-                        <Label Text="Border" FontAttributes="Bold" />
-                        <Label Text="Сучасний контроль форми, тіні та обводки." Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" />
-                    </VerticalStackLayout>
-                </Border>
-                <Frame Grid.Column="1" CornerRadius="16" HasShadow="True" BorderColor="{StaticResource Gray200}" Padding="12">
-                    <VerticalStackLayout Spacing="4">
-                        <Label Text="Frame" FontAttributes="Bold" />
-                        <Label Text="Класична картка з Xamarin.Forms — досі підтримується." Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" />
-                    </VerticalStackLayout>
-                </Frame>
-            </Grid>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -2,22 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
+             xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
              x:Class="MauiControlsShowcase.Views.AlertsAndDialogsPage"
              x:DataType="vm:AlertsAndDialogsViewModel"
-             Title="Сповіщення та діалоги">
+             Title="{loc:Translate Alerts_Title}">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
 
-            <Label Text="Сповіщення та діалоги" Style="{StaticResource PageTitleLabel}" />
-            <Label Text="DisplayAlert, DisplayActionSheet, DisplayPromptAsync, модальна Navigation і Toast/Snackbar від CommunityToolkit.Maui."
+            <Label Text="{loc:Translate Alerts_Title}" Style="{StaticResource PageTitleLabel}" />
+            <Label Text="{loc:Translate Alerts_Subtitle}"
                    Style="{StaticResource PageSubtitleLabel}" />
 
             <Border Style="{StaticResource CardBorder}">
                 <Label Text="{Binding LastResult}" LineBreakMode="WordWrap" />
             </Border>
 
-            <Label Text="Нативні діалоги" Style="{StaticResource SectionHeaderLabel}" />
+            <Label Text="{loc:Translate Alerts_NativeSection}" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <FlexLayout Wrap="Wrap" JustifyContent="Start">
                     <Button Text="DisplayAlert" Command="{Binding ShowAlertCommand}" Margin="0,0,8,8" />
@@ -26,17 +27,17 @@
                 </FlexLayout>
             </Border>
 
-            <Label Text="Спливаючі вікна CommunityToolkit.Maui" Style="{StaticResource SectionHeaderLabel}" />
+            <Label Text="{loc:Translate Alerts_PopupSection}" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <FlexLayout Wrap="Wrap" JustifyContent="Start">
-                    <Button Text="Показати Toast" Style="{StaticResource OutlineButton}" Command="{Binding ShowToastCommand}" Margin="0,0,8,8" />
-                    <Button Text="Показати Snackbar" Style="{StaticResource OutlineButton}" Command="{Binding ShowSnackbarCommand}" Margin="0,0,8,8" />
+                    <Button Text="{loc:Translate Alerts_ShowToast}" Style="{StaticResource OutlineButton}" Command="{Binding ShowToastCommand}" Margin="0,0,8,8" />
+                    <Button Text="{loc:Translate Alerts_ShowSnackbar}" Style="{StaticResource OutlineButton}" Command="{Binding ShowSnackbarCommand}" Margin="0,0,8,8" />
                 </FlexLayout>
             </Border>
 
-            <Label Text="Модальна навігація" Style="{StaticResource SectionHeaderLabel}" />
+            <Label Text="{loc:Translate Alerts_ModalSection}" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
-                <Button Text="Відкрити модальну сторінку" Command="{Binding OpenModalCommand}" HorizontalOptions="Start" />
+                <Button Text="{loc:Translate Alerts_OpenModal}" Command="{Binding OpenModalCommand}" HorizontalOptions="Start" />
             </Border>
 
         </VerticalStackLayout>

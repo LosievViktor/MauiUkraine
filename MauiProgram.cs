@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MauiControlsShowcase.Services;
 using MauiControlsShowcase.ViewModels;
 using MauiControlsShowcase.Views;
 
@@ -10,10 +11,17 @@ public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
+		// Apply saved language (default English) before any page is created.
+		_ = LocalizationResourceManager.Instance;
+
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.UseMauiCommunityToolkit()
+			.UseMauiCommunityToolkit(options =>
+			{
+				// Required for Toast/Snackbar on Windows (uses AppNotification + COM activation).
+				options.SetShouldEnableSnackbarOnWindows(true);
+			})
 			.ConfigureFonts(fonts =>
 			{
 				// Add custom fonts here if you drop .ttf files into Resources/Fonts,
@@ -45,23 +53,11 @@ public static class MauiProgram
 		services.AddTransient<SelectionControlsViewModel>();
 		services.AddTransient<SelectionControlsPage>();
 
-		services.AddTransient<LayoutsViewModel>();
-		services.AddTransient<LayoutsPage>();
-
 		services.AddTransient<CollectionsViewModel>();
 		services.AddTransient<CollectionsPage>();
 
 		services.AddTransient<IndicatorsAndProgressViewModel>();
 		services.AddTransient<IndicatorsAndProgressPage>();
-
-		services.AddTransient<GraphicsViewModel>();
-		services.AddTransient<GraphicsPage>();
-
-		services.AddTransient<GesturesAndAnimationViewModel>();
-		services.AddTransient<GesturesAndAnimationPage>();
-
-		services.AddTransient<StylingAndThemeViewModel>();
-		services.AddTransient<StylingAndThemePage>();
 
 		services.AddTransient<AlertsAndDialogsViewModel>();
 		services.AddTransient<AlertsAndDialogsPage>();

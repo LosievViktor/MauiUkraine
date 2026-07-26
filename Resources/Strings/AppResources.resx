@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="App_Title" xml:space="preserve"><value>MAUI Controls Showcase</value></data>
+  <data name="App_Tagline" xml:space="preserve"><value>A living collection of .NET MAUI UI capabilities</value></data>
+  <data name="Language_Label" xml:space="preserve"><value>Language</value></data>
+  <data name="Language_English" xml:space="preserve"><value>English</value></data>
+  <data name="Language_Ukrainian" xml:space="preserve"><value>Українська</value></data>
+
+  <data name="Flyout_Home" xml:space="preserve"><value>Home</value></data>
+  <data name="Flyout_Buttons" xml:space="preserve"><value>Buttons &amp; inputs</value></data>
+  <data name="Flyout_Selection" xml:space="preserve"><value>Selection controls</value></data>
+  <data name="Flyout_Collections" xml:space="preserve"><value>Collections</value></data>
+  <data name="Flyout_Indicators" xml:space="preserve"><value>Indicators &amp; progress</value></data>
+  <data name="Flyout_Alerts" xml:space="preserve"><value>Alerts &amp; dialogs</value></data>
+  <data name="Flyout_Footer" xml:space="preserve"><value>v1.0 · net10.0-maui</value></data>
+
+  <data name="Home_HeroTitle" xml:space="preserve"><value>MAUI Controls Showcase</value></data>
+  <data name="Home_HeroSubtitle" xml:space="preserve"><value>All the essential .NET MAUI UI controls in one convenient overview. Pick a category below or use the side menu (swipe from the left edge or tap ☰). Made in Ukraine by Viktor Losiev.</value></data>
+  <data name="Home_AboutButton" xml:space="preserve"><value>About this sample</value></data>
+  <data name="Home_AboutAlertTitle" xml:space="preserve"><value>About this sample</value></data>
+  <data name="Home_AboutAlertMessage" xml:space="preserve"><value>This app is a single .NET MAUI project built to showcase the breadth of the framework on Android, iOS, macOS, and Windows from one shared C#/XAML codebase.</value></data>
+  <data name="Home_AboutAlertOk" xml:space="preserve"><value>Great!</value></data>
+  <data name="Home_Feature_Buttons_Title" xml:space="preserve"><value>Buttons &amp; inputs</value></data>
+  <data name="Home_Feature_Buttons_Desc" xml:space="preserve"><value>Button, Entry, SearchBar</value></data>
+  <data name="Home_Feature_Selection_Title" xml:space="preserve"><value>Selection controls</value></data>
+  <data name="Home_Feature_Selection_Desc" xml:space="preserve"><value>Switch, CheckBox, RadioButton, Picker, Date/TimePicker, Stepper, Slider</value></data>
+  <data name="Home_Feature_Collections_Title" xml:space="preserve"><value>Collections</value></data>
+  <data name="Home_Feature_Collections_Desc" xml:space="preserve"><value>CollectionView, SwipeView, RefreshView</value></data>
+  <data name="Home_Feature_Indicators_Title" xml:space="preserve"><value>Indicators &amp; progress</value></data>
+  <data name="Home_Feature_Indicators_Desc" xml:space="preserve"><value>ActivityIndicator, ProgressBar</value></data>
+  <data name="Home_Feature_Alerts_Title" xml:space="preserve"><value>Alerts &amp; dialogs</value></data>
+  <data name="Home_Feature_Alerts_Desc" xml:space="preserve"><value>DisplayAlert, ActionSheet, Prompt, Toast, Snackbar, modal pages</value></data>
+
+  <data name="Buttons_Title" xml:space="preserve"><value>Buttons &amp; inputs</value></data>
+  <data name="Buttons_Subtitle" xml:space="preserve"><value>Button, Entry, and SearchBar — the core interactive input and command controls in MAUI.</value></data>
+  <data name="Buttons_Filled" xml:space="preserve"><value>Filled</value></data>
+  <data name="Buttons_Outline" xml:space="preserve"><value>Outline</value></data>
+  <data name="Buttons_Disabled" xml:space="preserve"><value>Disabled</value></data>
+  <data name="Buttons_FullNamePlaceholder" xml:space="preserve"><value>Full name</value></data>
+  <data name="Buttons_PasswordPlaceholder" xml:space="preserve"><value>Password</value></data>
+  <data name="Buttons_NumericPlaceholder" xml:space="preserve"><value>Numeric keyboard</value></data>
+  <data name="Buttons_HelloFormat" xml:space="preserve"><value>Hello, {0}! (two-way binding in real time)</value></data>
+  <data name="Buttons_SearchPlaceholder" xml:space="preserve"><value>Search MAUI technologies...</value></data>
+
+  <data name="Selection_Title" xml:space="preserve"><value>Selection controls</value></data>
+  <data name="Selection_Subtitle" xml:space="preserve"><value>Switch, CheckBox, RadioButton, Picker, DatePicker, TimePicker, Stepper, and Slider.</value></data>
+  <data name="Selection_NotificationsFormat" xml:space="preserve"><value>Notifications {0}</value></data>
+  <data name="Selection_On" xml:space="preserve"><value>on</value></data>
+  <data name="Selection_Off" xml:space="preserve"><value>off</value></data>
+  <data name="Selection_CheckboxLabel" xml:space="preserve"><value>I understand this is a demo app</value></data>
+  <data name="Selection_Red" xml:space="preserve"><value>Red</value></data>
+  <data name="Selection_Green" xml:space="preserve"><value>Green</value></data>
+  <data name="Selection_Blue" xml:space="preserve"><value>Blue</value></data>
+  <data name="Selection_SelectedFormat" xml:space="preserve"><value>Selected: {0}</value></data>
+  <data name="Selection_PlatformTitle" xml:space="preserve"><value>Target platform</value></data>
+  <data name="Selection_BuildForFormat" xml:space="preserve"><value>Building for: {0}</value></data>
+  <data name="Selection_Date" xml:space="preserve"><value>Date:</value></data>
+  <data name="Selection_Time" xml:space="preserve"><value>Time:</value></data>
+  <data name="Selection_ScheduledFormat" xml:space="preserve"><value>Scheduled for {0:D}</value></data>
+  <data name="Selection_At" xml:space="preserve"><value> at </value></data>
+  <data name="Selection_TeamSizeFormat" xml:space="preserve"><value>Team size: {0}</value></data>
+  <data name="Selection_VolumeFormat" xml:space="preserve"><value>Volume: {0:P0}</value></data>
+
+  <data name="Collections_Title" xml:space="preserve"><value>Collections</value></data>
+  <data name="Collections_Subtitle" xml:space="preserve"><value>CollectionView, SwipeView, and RefreshView — MAUI’s data-driven list controls.</value></data>
+  <data name="Collections_SectionHeader" xml:space="preserve"><value>CollectionView + SwipeView + RefreshView</value></data>
+  <data name="Collections_NewTodoPlaceholder" xml:space="preserve"><value>Add a new task...</value></data>
+  <data name="Collections_Add" xml:space="preserve"><value>Add</value></data>
+  <data name="Collections_Hint" xml:space="preserve"><value>Pull down to refresh · swipe a row left to delete</value></data>
+  <data name="Collections_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Collections_Empty" xml:space="preserve"><value>No tasks left — add a new one above!</value></data>
+  <data name="Collections_Todo1" xml:space="preserve"><value>Wire up Shell flyout navigation</value></data>
+  <data name="Collections_Todo2" xml:space="preserve"><value>Style controls via ResourceDictionary</value></data>
+  <data name="Collections_Todo3" xml:space="preserve"><value>Add a GraphicsView chart</value></data>
+  <data name="Collections_Todo4" xml:space="preserve"><value>Show swipe-to-delete with SwipeView</value></data>
+  <data name="Collections_Todo5" xml:space="preserve"><value>Ship it 🚀</value></data>
+  <data name="Collections_RefreshedItemFormat" xml:space="preserve"><value>Refreshed item at {0:T}</value></data>
+  <data name="Priority_Low" xml:space="preserve"><value>Low</value></data>
+  <data name="Priority_Normal" xml:space="preserve"><value>Normal</value></data>
+  <data name="Priority_High" xml:space="preserve"><value>High</value></data>
+
+  <data name="Indicators_Title" xml:space="preserve"><value>Indicators &amp; progress</value></data>
+  <data name="Indicators_Subtitle" xml:space="preserve"><value>ActivityIndicator and ProgressBar — controls that show “something is happening”.</value></data>
+  <data name="Indicators_Enable" xml:space="preserve"><value>Enable indicator</value></data>
+  <data name="Indicators_ProgressFormat" xml:space="preserve"><value>Upload progress: {0:P0}</value></data>
+  <data name="Indicators_Simulate" xml:space="preserve"><value>Simulate upload</value></data>
+
+  <data name="Alerts_Title" xml:space="preserve"><value>Alerts &amp; dialogs</value></data>
+  <data name="Alerts_Subtitle" xml:space="preserve"><value>DisplayAlert, DisplayActionSheet, DisplayPromptAsync, modal Navigation, and CommunityToolkit.Maui Toast/Snackbar.</value></data>
+  <data name="Alerts_NativeSection" xml:space="preserve"><value>Native dialogs</value></data>
+  <data name="Alerts_PopupSection" xml:space="preserve"><value>CommunityToolkit.Maui popups</value></data>
+  <data name="Alerts_ModalSection" xml:space="preserve"><value>Modal navigation</value></data>
+  <data name="Alerts_ShowToast" xml:space="preserve"><value>Show Toast</value></data>
+  <data name="Alerts_ShowSnackbar" xml:space="preserve"><value>Show Snackbar</value></data>
+  <data name="Alerts_OpenModal" xml:space="preserve"><value>Open modal page</value></data>
+  <data name="Alerts_LastResultDefault" xml:space="preserve"><value>Try one of the actions below.</value></data>
+  <data name="Alerts_DeleteTitle" xml:space="preserve"><value>Delete item?</value></data>
+  <data name="Alerts_DeleteMessage" xml:space="preserve"><value>This is a two-button DisplayAlert — the classic blocking confirmation dialog.</value></data>
+  <data name="Alerts_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Alerts_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Alerts_AlertDeleted" xml:space="preserve"><value>Alert: user chose “Delete”.</value></data>
+  <data name="Alerts_AlertCancelled" xml:space="preserve"><value>Alert: user chose “Cancel”.</value></data>
+  <data name="Alerts_SortTitle" xml:space="preserve"><value>Sort tasks by...</value></data>
+  <data name="Alerts_DeleteAll" xml:space="preserve"><value>Delete all</value></data>
+  <data name="Alerts_SortByPriority" xml:space="preserve"><value>Priority</value></data>
+  <data name="Alerts_SortByDate" xml:space="preserve"><value>Creation date</value></data>
+  <data name="Alerts_SortByName" xml:space="preserve"><value>Name (A-Z)</value></data>
+  <data name="Alerts_ActionSheetResultFormat" xml:space="preserve"><value>Action sheet: user chose “{0}”.</value></data>
+  <data name="Alerts_PromptTitle" xml:space="preserve"><value>What is your name?</value></data>
+  <data name="Alerts_PromptMessage" xml:space="preserve"><value>DisplayPromptAsync collects a single free-text line.</value></data>
+  <data name="Alerts_PromptPlaceholder" xml:space="preserve"><value>Ada Lovelace</value></data>
+  <data name="Alerts_PromptCancelled" xml:space="preserve"><value>Prompt: cancelled or left empty.</value></data>
+  <data name="Alerts_PromptHelloFormat" xml:space="preserve"><value>Prompt: hello, {0}!</value></data>
+  <data name="Alerts_ToastMessage" xml:space="preserve"><value>This is a Toast from CommunityToolkit.Maui — a short, unobtrusive notification.</value></data>
+  <data name="Alerts_ToastShown" xml:space="preserve"><value>Toast shown (CommunityToolkit.Maui).</value></data>
+  <data name="Alerts_SnackbarMessage" xml:space="preserve"><value>Task deleted.</value></data>
+  <data name="Alerts_SnackbarUndo" xml:space="preserve"><value>UNDO</value></data>
+  <data name="Alerts_SnackbarUndone" xml:space="preserve"><value>Snackbar: user tapped UNDO.</value></data>
+  <data name="Alerts_SnackbarShown" xml:space="preserve"><value>Snackbar shown — tap UNDO before it disappears.</value></data>
+
+  <data name="Modal_Title" xml:space="preserve"><value>Modal page</value></data>
+  <data name="Modal_Heading" xml:space="preserve"><value>📄 Modal navigation</value></data>
+  <data name="Modal_Body" xml:space="preserve"><value>This page was opened with Navigation.PushModalAsync — it covers the whole screen and hides the Shell flyout until closed. That’s how login, checkout, or setup wizards are usually done.</value></data>
+  <data name="Modal_Close" xml:space="preserve"><value>Close</value></data>
+</root>

@@ -1,26 +1,16 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+using MauiControlsShowcase.Resources.Strings;
 
 namespace MauiControlsShowcase.ViewModels;
 
 public partial class ButtonsAndInputsViewModel : BaseViewModel
 {
 	[ObservableProperty]
-	private int counter;
-
-	[ObservableProperty]
-	[NotifyCanExecuteChangedFor(nameof(ResetCounterCommand))]
-	private bool isCounterBusy;
-
-	[ObservableProperty]
 	private string fullName = string.Empty;
 
 	[ObservableProperty]
 	private string password = string.Empty;
-
-	[ObservableProperty]
-	private string bio = "MAUI дозволяє одній кодовій базі C# + XAML працювати на Android, iOS, macOS і Windows.";
 
 	[ObservableProperty]
 	private string searchQuery = string.Empty;
@@ -35,20 +25,13 @@ public partial class ButtonsAndInputsViewModel : BaseViewModel
 
 	public ButtonsAndInputsViewModel()
 	{
-		Title = "Кнопки та поля вводу";
+		ApplyLocalization();
 		RunSearch();
 	}
 
-	[RelayCommand]
-	private void Increment() => Counter++;
-
-	[RelayCommand]
-	private async Task ResetCounterAsync()
+	protected override void ApplyLocalization()
 	{
-		IsCounterBusy = true;
-		await Task.Delay(400);
-		Counter = 0;
-		IsCounterBusy = false;
+		Title = AppResources.Get("Buttons_Title");
 	}
 
 	partial void OnSearchQueryChanged(string value) => RunSearch();

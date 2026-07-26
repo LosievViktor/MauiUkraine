@@ -1,3 +1,6 @@
+using MauiControlsShowcase.Resources.Strings;
+using MauiControlsShowcase.Services;
+
 namespace MauiControlsShowcase;
 
 public partial class AppShell : Shell
@@ -5,11 +8,40 @@ public partial class AppShell : Shell
 	public AppShell()
 	{
 		InitializeComponent();
+		LocalizationResourceManager.Instance.CultureChanged += OnCultureChanged;
+		ApplyFlyoutTitles();
+	}
 
-		// Every demo page is already reachable by its absolute route because
-		// each one is declared as a top-level FlyoutItem/ShellContent above
-		// (e.g. Shell.Current.GoToAsync("//buttons")). That's how the "Jump to
-		// a demo" cards on the Home page navigate without needing any extra
-		// Routing.RegisterRoute calls here.
+	private void OnCultureChanged(object? sender, EventArgs e)
+		=> MainThread.BeginInvokeOnMainThread(ApplyFlyoutTitles);
+
+	private void ApplyFlyoutTitles()
+	{
+		Title = AppResources.Get("App_Title");
+		HomeFlyout.Title = AppResources.Get("Flyout_Home");
+		ButtonsFlyout.Title = AppResources.Get("Flyout_Buttons");
+		SelectionFlyout.Title = AppResources.Get("Flyout_Selection");
+		CollectionsFlyout.Title = AppResources.Get("Flyout_Collections");
+		IndicatorsFlyout.Title = AppResources.Get("Flyout_Indicators");
+		AlertsFlyout.Title = AppResources.Get("Flyout_Alerts");
+
+		foreach (var item in Items)
+		{
+			if (item is FlyoutItem flyout)
+			{
+				foreach (var section in flyout.Items)
+				{
+					foreach (var content in section.Items)
+					{
+						content.Title = flyout.Title;
+					}
+				}
+			}
+		}
+
+		if (Application.Current?.Windows.FirstOrDefault() is Window window)
+		{
+			window.Title = AppResources.Get("App_Title");
+		}
 	}
 }

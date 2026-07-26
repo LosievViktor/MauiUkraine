@@ -3,30 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiControlsShowcase.ViewModels"
              xmlns:models="clr-namespace:MauiControlsShowcase.Models"
+             xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
              x:Class="MauiControlsShowcase.Views.HomePage"
              x:DataType="vm:HomeViewModel"
              x:Name="RootPage"
-             Title="Головна">
+             Title="{loc:Translate Flyout_Home}"
+             AutomationProperties.AutomationId="page_home">
 
-    <!--
-        The header (title/intro/button) lives in CollectionView.Header instead of
-        wrapping the CollectionView in its own ScrollView - nesting a CollectionView
-        inside another scrollable container is a common MAUI pitfall since the
-        CollectionView then has no bounded height to measure against. Letting the
-        CollectionView own the one scroll viewport keeps everything - header and
-        grid of cards alike - scrolling together, smoothly, on every platform.
-    -->
-    <CollectionView ItemsSource="{Binding Features}" SelectionMode="None" Margin="20">
+    <CollectionView ItemsSource="{Binding Features}" SelectionMode="None" Margin="20"
+                    AutomationProperties.AutomationId="home_features">
         <CollectionView.Header>
             <VerticalStackLayout Spacing="6" Margin="0,0,0,16">
-                <Label Text="🧩 Вітрина елементів MAUI" Style="{StaticResource PageTitleLabel}" />
-                <Label Text="Усі основні елементи інтерфейсу .NET MAUI в одному зручному огляді. Оберіть категорію нижче або скористайтеся бічним меню (проведіть від лівого краю або натисніть ☰)."
-                       Style="{StaticResource PageSubtitleLabel}" />
-                <Button Text="ℹ️ Про цей приклад"
+                <Label Text="{loc:Translate Home_HeroTitle}"
+                       Style="{StaticResource PageTitleLabel}"
+                       AutomationProperties.AutomationId="home_hero_title" />
+                <Label Text="{loc:Translate Home_HeroSubtitle}"
+                       Style="{StaticResource PageSubtitleLabel}"
+                       AutomationProperties.AutomationId="home_hero_subtitle" />
+
+                <Label Text="{loc:Translate Language_Label}"
+                       Style="{StaticResource SectionHeaderLabel}"
+                       Margin="0,10,0,0" />
+                <HorizontalStackLayout Spacing="16"
+                                       RadioButtonGroup.GroupName="languageGroup"
+                                       RadioButtonGroup.SelectedValue="{Binding SelectedLanguageCode}"
+                                       AutomationProperties.AutomationId="home_language_picker">
+                    <RadioButton Content="{loc:Translate Language_English}"
+                                 Value="en"
+                                 AutomationProperties.AutomationId="home_language_en" />
+                    <RadioButton Content="{loc:Translate Language_Ukrainian}"
+                                 Value="uk"
+                                 AutomationProperties.AutomationId="home_language_uk" />
+                </HorizontalStackLayout>
+
+                <Button Text="{loc:Translate Home_AboutButton}"
                         Style="{StaticResource OutlineButton}"
                         Command="{Binding OpenRepoInfoCommand}"
                         HorizontalOptions="Start"
-                        Margin="0,10,0,0" />
+                        Margin="0,10,0,0"
+                        AutomationProperties.AutomationId="home_about_button" />
             </VerticalStackLayout>
         </CollectionView.Header>
 
@@ -36,13 +51,13 @@
 
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:HomeFeature">
-                <Border Style="{StaticResource CardBorder}">
+                <Border Style="{StaticResource CardBorder}"
+                        AutomationProperties.AutomationId="{Binding Route, StringFormat='feature_{0}'}">
                     <Border.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding Source={x:Reference RootPage}, Path=BindingContext.NavigateCommand}"
                                                CommandParameter="{Binding .}" />
                     </Border.GestureRecognizers>
                     <VerticalStackLayout Spacing="4">
-                        <Label Text="{Binding Icon}" FontSize="28" />
                         <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="15" />
                         <Label Text="{Binding Description}" Style="{StaticResource CaptionLabel}" LineBreakMode="WordWrap" />
                     </VerticalStackLayout>

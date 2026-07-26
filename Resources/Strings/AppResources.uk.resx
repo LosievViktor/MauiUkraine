@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="App_Title" xml:space="preserve"><value>Вітрина елементів MAUI</value></data>
+  <data name="App_Tagline" xml:space="preserve"><value>Жива колекція можливостей інтерфейсу .NET MAUI</value></data>
+  <data name="Language_Label" xml:space="preserve"><value>Мова</value></data>
+  <data name="Language_English" xml:space="preserve"><value>English</value></data>
+  <data name="Language_Ukrainian" xml:space="preserve"><value>Українська</value></data>
+
+  <data name="Flyout_Home" xml:space="preserve"><value>Головна</value></data>
+  <data name="Flyout_Buttons" xml:space="preserve"><value>Кнопки та поля вводу</value></data>
+  <data name="Flyout_Selection" xml:space="preserve"><value>Елементи вибору</value></data>
+  <data name="Flyout_Collections" xml:space="preserve"><value>Колекції</value></data>
+  <data name="Flyout_Indicators" xml:space="preserve"><value>Індикатори та прогрес</value></data>
+  <data name="Flyout_Alerts" xml:space="preserve"><value>Сповіщення та діалоги</value></data>
+  <data name="Flyout_Footer" xml:space="preserve"><value>v1.0 · net10.0-maui</value></data>
+
+  <data name="Home_HeroTitle" xml:space="preserve"><value>Вітрина елементів MAUI</value></data>
+  <data name="Home_HeroSubtitle" xml:space="preserve"><value>Усі основні елементи інтерфейсу .NET MAUI в одному зручному огляді. Оберіть категорію нижче або скористайтеся бічним меню (проведіть від лівого краю або натисніть ☰). Розроблено в Україні Лосєвим Віктором.</value></data>
+  <data name="Home_AboutButton" xml:space="preserve"><value>Про цей приклад</value></data>
+  <data name="Home_AboutAlertTitle" xml:space="preserve"><value>Про цей приклад</value></data>
+  <data name="Home_AboutAlertMessage" xml:space="preserve"><value>Цей застосунок — єдиний проєкт .NET MAUI, створений вручну, щоб показати широту можливостей фреймворку на Android, iOS, macOS і Windows з однієї спільної кодової бази C#/XAML.</value></data>
+  <data name="Home_AboutAlertOk" xml:space="preserve"><value>Чудово!</value></data>
+  <data name="Home_Feature_Buttons_Title" xml:space="preserve"><value>Кнопки та поля вводу</value></data>
+  <data name="Home_Feature_Buttons_Desc" xml:space="preserve"><value>Button, Entry, SearchBar</value></data>
+  <data name="Home_Feature_Selection_Title" xml:space="preserve"><value>Елементи вибору</value></data>
+  <data name="Home_Feature_Selection_Desc" xml:space="preserve"><value>Switch, CheckBox, RadioButton, Picker, Date/TimePicker, Stepper, Slider</value></data>
+  <data name="Home_Feature_Collections_Title" xml:space="preserve"><value>Колекції</value></data>
+  <data name="Home_Feature_Collections_Desc" xml:space="preserve"><value>CollectionView, SwipeView, RefreshView</value></data>
+  <data name="Home_Feature_Indicators_Title" xml:space="preserve"><value>Індикатори та прогрес</value></data>
+  <data name="Home_Feature_Indicators_Desc" xml:space="preserve"><value>ActivityIndicator, ProgressBar</value></data>
+  <data name="Home_Feature_Alerts_Title" xml:space="preserve"><value>Сповіщення та діалоги</value></data>
+  <data name="Home_Feature_Alerts_Desc" xml:space="preserve"><value>DisplayAlert, ActionSheet, Prompt, Toast, Snackbar, модальні вікна</value></data>
+
+  <data name="Buttons_Title" xml:space="preserve"><value>Кнопки та поля вводу</value></data>
+  <data name="Buttons_Subtitle" xml:space="preserve"><value>Button, Entry і SearchBar — основні інтерактивні елементи введення та команд MAUI.</value></data>
+  <data name="Buttons_Filled" xml:space="preserve"><value>Заповнена</value></data>
+  <data name="Buttons_Outline" xml:space="preserve"><value>Контурна</value></data>
+  <data name="Buttons_Disabled" xml:space="preserve"><value>Вимкнена</value></data>
+  <data name="Buttons_FullNamePlaceholder" xml:space="preserve"><value>Повне ім'я</value></data>
+  <data name="Buttons_PasswordPlaceholder" xml:space="preserve"><value>Пароль</value></data>
+  <data name="Buttons_NumericPlaceholder" xml:space="preserve"><value>Цифрова клавіатура</value></data>
+  <data name="Buttons_HelloFormat" xml:space="preserve"><value>Привіт, {0}! (двостороння прив'язка в реальному часі)</value></data>
+  <data name="Buttons_SearchPlaceholder" xml:space="preserve"><value>Пошук технологій MAUI...</value></data>
+
+  <data name="Selection_Title" xml:space="preserve"><value>Елементи вибору</value></data>
+  <data name="Selection_Subtitle" xml:space="preserve"><value>Switch, CheckBox, RadioButton, Picker, DatePicker, TimePicker, Stepper і Slider.</value></data>
+  <data name="Selection_NotificationsFormat" xml:space="preserve"><value>Сповіщення {0}</value></data>
+  <data name="Selection_On" xml:space="preserve"><value>увімкнено</value></data>
+  <data name="Selection_Off" xml:space="preserve"><value>вимкнено</value></data>
+  <data name="Selection_CheckboxLabel" xml:space="preserve"><value>Я розумію, що це демонстраційний застосунок</value></data>
+  <data name="Selection_Red" xml:space="preserve"><value>Червоний</value></data>
+  <data name="Selection_Green" xml:space="preserve"><value>Зелений</value></data>
+  <data name="Selection_Blue" xml:space="preserve"><value>Синій</value></data>
+  <data name="Selection_SelectedFormat" xml:space="preserve"><value>Обрано: {0}</value></data>
+  <data name="Selection_PlatformTitle" xml:space="preserve"><value>Цільова платформа</value></data>
+  <data name="Selection_BuildForFormat" xml:space="preserve"><value>Збірка для: {0}</value></data>
+  <data name="Selection_Date" xml:space="preserve"><value>Дата:</value></data>
+  <data name="Selection_Time" xml:space="preserve"><value>Час:</value></data>
+  <data name="Selection_ScheduledFormat" xml:space="preserve"><value>Заплановано на {0:D}</value></data>
+  <data name="Selection_At" xml:space="preserve"><value> о </value></data>
+  <data name="Selection_TeamSizeFormat" xml:space="preserve"><value>Розмір команди: {0}</value></data>
+  <data name="Selection_VolumeFormat" xml:space="preserve"><value>Гучність: {0:P0}</value></data>
+
+  <data name="Collections_Title" xml:space="preserve"><value>Колекції</value></data>
+  <data name="Collections_Subtitle" xml:space="preserve"><value>CollectionView, SwipeView і RefreshView — елементи списків на основі даних MAUI.</value></data>
+  <data name="Collections_SectionHeader" xml:space="preserve"><value>CollectionView + SwipeView + RefreshView</value></data>
+  <data name="Collections_NewTodoPlaceholder" xml:space="preserve"><value>Додати нове завдання...</value></data>
+  <data name="Collections_Add" xml:space="preserve"><value>Додати</value></data>
+  <data name="Collections_Hint" xml:space="preserve"><value>Потягніть вниз, щоб оновити · проведіть рядок ліворуч, щоб видалити</value></data>
+  <data name="Collections_Delete" xml:space="preserve"><value>Видалити</value></data>
+  <data name="Collections_Empty" xml:space="preserve"><value>Завдань не залишилось — додайте нове вище!</value></data>
+  <data name="Collections_Todo1" xml:space="preserve"><value>Підключити навігацію Shell flyout</value></data>
+  <data name="Collections_Todo2" xml:space="preserve"><value>Стилізувати елементи через ResourceDictionary</value></data>
+  <data name="Collections_Todo3" xml:space="preserve"><value>Додати діаграму GraphicsView</value></data>
+  <data name="Collections_Todo4" xml:space="preserve"><value>Показати видалення свайпом через SwipeView</value></data>
+  <data name="Collections_Todo5" xml:space="preserve"><value>Опублікувати 🚀</value></data>
+  <data name="Collections_RefreshedItemFormat" xml:space="preserve"><value>Оновлений елемент о {0:T}</value></data>
+  <data name="Priority_Low" xml:space="preserve"><value>Низький</value></data>
+  <data name="Priority_Normal" xml:space="preserve"><value>Звичайний</value></data>
+  <data name="Priority_High" xml:space="preserve"><value>Високий</value></data>
+
+  <data name="Indicators_Title" xml:space="preserve"><value>Індикатори та прогрес</value></data>
+  <data name="Indicators_Subtitle" xml:space="preserve"><value>ActivityIndicator і ProgressBar — елементи, що показують «щось відбувається».</value></data>
+  <data name="Indicators_Enable" xml:space="preserve"><value>Увімкнути індикатор</value></data>
+  <data name="Indicators_ProgressFormat" xml:space="preserve"><value>Прогрес завантаження: {0:P0}</value></data>
+  <data name="Indicators_Simulate" xml:space="preserve"><value>Симулювати завантаження</value></data>
+
+  <data name="Alerts_Title" xml:space="preserve"><value>Сповіщення та діалоги</value></data>
+  <data name="Alerts_Subtitle" xml:space="preserve"><value>DisplayAlert, DisplayActionSheet, DisplayPromptAsync, модальна Navigation і Toast/Snackbar від CommunityToolkit.Maui.</value></data>
+  <data name="Alerts_NativeSection" xml:space="preserve"><value>Нативні діалоги</value></data>
+  <data name="Alerts_PopupSection" xml:space="preserve"><value>Спливаючі вікна CommunityToolkit.Maui</value></data>
+  <data name="Alerts_ModalSection" xml:space="preserve"><value>Модальна навігація</value></data>
+  <data name="Alerts_ShowToast" xml:space="preserve"><value>Показати Toast</value></data>
+  <data name="Alerts_ShowSnackbar" xml:space="preserve"><value>Показати Snackbar</value></data>
+  <data name="Alerts_OpenModal" xml:space="preserve"><value>Відкрити модальну сторінку</value></data>
+  <data name="Alerts_LastResultDefault" xml:space="preserve"><value>Спробуйте одну з дій нижче.</value></data>
+  <data name="Alerts_DeleteTitle" xml:space="preserve"><value>Видалити елемент?</value></data>
+  <data name="Alerts_DeleteMessage" xml:space="preserve"><value>Це двокнопковий DisplayAlert — класичний блокуючий діалог підтвердження.</value></data>
+  <data name="Alerts_Delete" xml:space="preserve"><value>Видалити</value></data>
+  <data name="Alerts_Cancel" xml:space="preserve"><value>Скасувати</value></data>
+  <data name="Alerts_AlertDeleted" xml:space="preserve"><value>Alert: користувач обрав «Видалити».</value></data>
+  <data name="Alerts_AlertCancelled" xml:space="preserve"><value>Alert: користувач обрав «Скасувати».</value></data>
+  <data name="Alerts_SortTitle" xml:space="preserve"><value>Сортувати завдання за...</value></data>
+  <data name="Alerts_DeleteAll" xml:space="preserve"><value>Видалити все</value></data>
+  <data name="Alerts_SortByPriority" xml:space="preserve"><value>Пріоритетом</value></data>
+  <data name="Alerts_SortByDate" xml:space="preserve"><value>Датою створення</value></data>
+  <data name="Alerts_SortByName" xml:space="preserve"><value>Назвою (А-Я)</value></data>
+  <data name="Alerts_ActionSheetResultFormat" xml:space="preserve"><value>Action sheet: користувач обрав «{0}».</value></data>
+  <data name="Alerts_PromptTitle" xml:space="preserve"><value>Як вас звати?</value></data>
+  <data name="Alerts_PromptMessage" xml:space="preserve"><value>DisplayPromptAsync збирає один рядок вільного тексту.</value></data>
+  <data name="Alerts_PromptPlaceholder" xml:space="preserve"><value>Ада Лавлейс</value></data>
+  <data name="Alerts_PromptCancelled" xml:space="preserve"><value>Prompt: скасовано або залишено порожнім.</value></data>
+  <data name="Alerts_PromptHelloFormat" xml:space="preserve"><value>Prompt: привіт, {0}!</value></data>
+  <data name="Alerts_ToastMessage" xml:space="preserve"><value>Це Toast від CommunityToolkit.Maui — коротке ненав'язливе сповіщення.</value></data>
+  <data name="Alerts_ToastShown" xml:space="preserve"><value>Toast показано (CommunityToolkit.Maui).</value></data>
+  <data name="Alerts_SnackbarMessage" xml:space="preserve"><value>Завдання видалено.</value></data>
+  <data name="Alerts_SnackbarUndo" xml:space="preserve"><value>СКАСУВАТИ</value></data>
+  <data name="Alerts_SnackbarUndone" xml:space="preserve"><value>Snackbar: користувач натиснув СКАСУВАТИ.</value></data>
+  <data name="Alerts_SnackbarShown" xml:space="preserve"><value>Snackbar показано — натисніть СКАСУВАТИ, поки не зникне.</value></data>
+
+  <data name="Modal_Title" xml:space="preserve"><value>Модальна сторінка</value></data>
+  <data name="Modal_Heading" xml:space="preserve"><value>📄 Модальна навігація</value></data>
+  <data name="Modal_Body" xml:space="preserve"><value>Цю сторінку відкрито через Navigation.PushModalAsync — вона перекриває весь екран і ховає flyout Shell, доки не буде закрита. Саме так роблять вхід, оформлення замовлення або майстер налаштувань.</value></data>
+  <data name="Modal_Close" xml:space="preserve"><value>Закрити</value></data>
+</root>

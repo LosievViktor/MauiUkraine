@@ -2,6 +2,7 @@ using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MauiControlsShowcase.Resources.Strings;
 using MauiControlsShowcase.Views;
 
 namespace MauiControlsShowcase.ViewModels;
@@ -9,66 +10,95 @@ namespace MauiControlsShowcase.ViewModels;
 public partial class AlertsAndDialogsViewModel : BaseViewModel
 {
 	[ObservableProperty]
-	private string lastResult = "Спробуйте одну з дій нижче.";
+	private string lastResult = string.Empty;
+
+	private bool _hasCustomResult;
 
 	public AlertsAndDialogsViewModel()
 	{
-		Title = "Сповіщення та діалоги";
+		ApplyLocalization();
+	}
+
+	protected override void ApplyLocalization()
+	{
+		Title = AppResources.Get("Alerts_Title");
+		if (!_hasCustomResult)
+		{
+			LastResult = AppResources.Get("Alerts_LastResultDefault");
+		}
 	}
 
 	[RelayCommand]
 	private async Task ShowAlertAsync()
 	{
 		var confirmed = await Shell.Current.DisplayAlertAsync(
-			"Видалити елемент?",
-			"Це двокнопковий DisplayAlert — класичний блокуючий діалог підтвердження.",
-			"Видалити", "Скасувати");
+			AppResources.Get("Alerts_DeleteTitle"),
+			AppResources.Get("Alerts_DeleteMessage"),
+			AppResources.Get("Alerts_Delete"),
+			AppResources.Get("Alerts_Cancel"));
 
-		LastResult = confirmed ? "Alert: користувач обрав «Видалити»." : "Alert: користувач обрав «Скасувати».";
+		LastResult = confirmed
+			? AppResources.Get("Alerts_AlertDeleted")
+			: AppResources.Get("Alerts_AlertCancelled");
+		_hasCustomResult = true;
 	}
 
 	[RelayCommand]
 	private async Task ShowActionSheetAsync()
 	{
 		var choice = await Shell.Current.DisplayActionSheetAsync(
-			"Сортувати завдання за...", "Скасувати", "Видалити все",
-			"Пріоритетом", "Датою створення", "Назвою (А-Я)");
+			AppResources.Get("Alerts_SortTitle"),
+			AppResources.Get("Alerts_Cancel"),
+			AppResources.Get("Alerts_DeleteAll"),
+			AppResources.Get("Alerts_SortByPriority"),
+			AppResources.Get("Alerts_SortByDate"),
+			AppResources.Get("Alerts_SortByName"));
 
-		LastResult = $"Action sheet: користувач обрав «{choice}».";
+		LastResult = AppResources.Format("Alerts_ActionSheetResultFormat", choice);
+		_hasCustomResult = true;
 	}
 
 	[RelayCommand]
 	private async Task ShowPromptAsync()
 	{
 		var name = await Shell.Current.DisplayPromptAsync(
-			"Як вас звати?",
-			"DisplayPromptAsync збирає один рядок вільного тексту.",
-			accept: "OK", cancel: "Скасувати", placeholder: "Ада Лавлейс");
+			AppResources.Get("Alerts_PromptTitle"),
+			AppResources.Get("Alerts_PromptMessage"),
+			accept: "OK",
+			cancel: AppResources.Get("Alerts_Cancel"),
+			placeholder: AppResources.Get("Alerts_PromptPlaceholder"));
 
 		LastResult = string.IsNullOrWhiteSpace(name)
-			? "Prompt: скасовано або залишено порожнім."
-			: $"Prompt: привіт, {name}!";
+			? AppResources.Get("Alerts_PromptCancelled")
+			: AppResources.Format("Alerts_PromptHelloFormat", name);
+		_hasCustomResult = true;
 	}
 
 	[RelayCommand]
 	private async Task ShowToastAsync()
 	{
-		var toast = Toast.Make("Це Toast від CommunityToolkit.Maui — коротке ненав'язливе сповіщення.", ToastDuration.Short, 14);
-		await toast.Show();
-		LastResult = "Toast показано (CommunityToolkit.Maui).";
+		var toast = Toast.Make(AppResources.Get("Alerts_ToastMessage"), ToastDuration.Short, 14);
+		await toast.Show(CancellationToken.None);
+		LastResult = AppResources.Get("Alerts_ToastShown");
+		_hasCustomResult = true;
 	}
 
 	[RelayCommand]
 	private async Task ShowSnackbarAsync()
 	{
 		var snackbar = Snackbar.Make(
-			"Завдання видалено.",
-			action: () => LastResult = "Snackbar: користувач натиснув СКАСУВАТИ.",
-			actionButtonText: "СКАСУВАТИ",
+			AppResources.Get("Alerts_SnackbarMessage"),
+			action: () => MainThread.BeginInvokeOnMainThread(() =>
+			{
+				LastResult = AppResources.Get("Alerts_SnackbarUndone");
+				_hasCustomResult = true;
+			}),
+			actionButtonText: AppResources.Get("Alerts_SnackbarUndo"),
 			duration: TimeSpan.FromSeconds(4));
 
-		await snackbar.Show();
-		LastResult = "Snackbar показано — натисніть СКАСУВАТИ, поки не зникне.";
+		await snackbar.Show(CancellationToken.None);
+		LastResult = AppResources.Get("Alerts_SnackbarShown");
+		_hasCustomResult = true;
 	}
 
 	[RelayCommand]

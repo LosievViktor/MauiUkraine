@@ -8,7 +8,12 @@ public partial class TodoItem : ObservableObject
 	[ObservableProperty]
 	private bool isDone;
 
-	public string Title { get; set; } = string.Empty;
+	[ObservableProperty]
+	private string title = string.Empty;
+
+	public string? TitleResourceKey { get; set; }
+
 	public Priority Priority { get; set; } = Priority.Normal;
+
 	public DateTime CreatedOn { get; set; } = DateTime.Now;
 }

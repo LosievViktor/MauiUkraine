@@ -2,7 +2,8 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:MauiControlsShowcase.Views"
-       Title="Вітрина елементів MAUI"
+       xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
+       Title="{loc:Translate App_Title}"
        FlyoutBehavior="Flyout"
        x:Class="MauiControlsShowcase.AppShell">
 
@@ -11,70 +12,53 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="🧩" FontSize="40" />
-            <Label Grid.Row="1" Text="Вітрина елементів MAUI" FontSize="20" FontAttributes="Bold" TextColor="White" />
-            <Label Grid.Row="2" Text="Жива колекція можливостей інтерфейсу .NET MAUI" FontSize="12" TextColor="#DCD6FF" />
+            <Label x:Name="FlyoutHeaderTitle"
+                   Grid.Row="0"
+                   Text="{loc:Translate App_Title}"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+            <Label x:Name="FlyoutHeaderTagline"
+                   Grid.Row="1"
+                   Text="{loc:Translate App_Tagline}"
+                   FontSize="12"
+                   TextColor="#DCD6FF" />
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Головна">
-        <ShellContent Title="Головна"
+    <FlyoutItem x:Name="HomeFlyout" Title="{loc:Translate Flyout_Home}">
+        <ShellContent Title="{loc:Translate Flyout_Home}"
                       Route="home"
                       ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Кнопки та поля вводу">
-        <ShellContent Title="Кнопки та поля вводу"
+    <FlyoutItem x:Name="ButtonsFlyout" Title="{loc:Translate Flyout_Buttons}">
+        <ShellContent Title="{loc:Translate Flyout_Buttons}"
                       Route="buttons"
                       ContentTemplate="{DataTemplate views:ButtonsAndInputsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Елементи вибору">
-        <ShellContent Title="Елементи вибору"
+    <FlyoutItem x:Name="SelectionFlyout" Title="{loc:Translate Flyout_Selection}">
+        <ShellContent Title="{loc:Translate Flyout_Selection}"
                       Route="selection"
                       ContentTemplate="{DataTemplate views:SelectionControlsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Макети">
-        <ShellContent Title="Макети"
-                      Route="layouts"
-                      ContentTemplate="{DataTemplate views:LayoutsPage}" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Колекції">
-        <ShellContent Title="Колекції"
+    <FlyoutItem x:Name="CollectionsFlyout" Title="{loc:Translate Flyout_Collections}">
+        <ShellContent Title="{loc:Translate Flyout_Collections}"
                       Route="collections"
                       ContentTemplate="{DataTemplate views:CollectionsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Індикатори та прогрес">
-        <ShellContent Title="Індикатори та прогрес"
+    <FlyoutItem x:Name="IndicatorsFlyout" Title="{loc:Translate Flyout_Indicators}">
+        <ShellContent Title="{loc:Translate Flyout_Indicators}"
                       Route="indicators"
                       ContentTemplate="{DataTemplate views:IndicatorsAndProgressPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Графіка та малювання">
-        <ShellContent Title="Графіка та малювання"
-                      Route="graphics"
-                      ContentTemplate="{DataTemplate views:GraphicsPage}" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Жести та анімація">
-        <ShellContent Title="Жести та анімація"
-                      Route="gestures"
-                      ContentTemplate="{DataTemplate views:GesturesAndAnimationPage}" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Стилі та теми">
-        <ShellContent Title="Стилі та теми"
-                      Route="styling"
-                      ContentTemplate="{DataTemplate views:StylingAndThemePage}" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Сповіщення та діалоги">
-        <ShellContent Title="Сповіщення та діалоги"
+    <FlyoutItem x:Name="AlertsFlyout" Title="{loc:Translate Flyout_Alerts}">
+        <ShellContent Title="{loc:Translate Flyout_Alerts}"
                       Route="alerts"
                       ContentTemplate="{DataTemplate views:AlertsAndDialogsPage}" />
     </FlyoutItem>
@@ -85,7 +69,11 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Text="v1.0 · net10.0-maui" FontSize="11" TextColor="Gray" VerticalOptions="Center" />
+            <Label Grid.Column="0"
+                   Text="{loc:Translate Flyout_Footer}"
+                   FontSize="11"
+                   TextColor="Gray"
+                   VerticalOptions="Center" />
         </Grid>
     </Shell.FlyoutFooter>
 

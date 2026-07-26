@@ -1,9 +1,14 @@
+using MauiControlsShowcase.Resources.Strings;
+using MauiControlsShowcase.Services;
+
 namespace MauiControlsShowcase;
 
 public partial class App : Application
 {
 	public App()
 	{
+		// Ensure the saved/default culture is applied before any UI is built.
+		_ = LocalizationResourceManager.Instance;
 		InitializeComponent();
 	}
 
@@ -11,7 +16,7 @@ public partial class App : Application
 	{
 		var window = new Window(new AppShell())
 		{
-			Title = "Вітрина елементів MAUI"
+			Title = AppResources.Get("App_Title")
 		};
 
 		// Give the desktop targets (Windows / Mac Catalyst) a sensible default

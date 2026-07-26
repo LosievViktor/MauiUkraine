@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiControlsShowcase.Models;
+using MauiControlsShowcase.Resources.Strings;
 
 namespace MauiControlsShowcase.ViewModels;
 
@@ -13,27 +14,40 @@ public partial class CollectionsViewModel : BaseViewModel
 	[ObservableProperty]
 	private string newTodoText = string.Empty;
 
-	public ObservableCollection<TodoItem> Todos { get; } = new()
-	{
-		new TodoItem { Title = "Підключити навігацію Shell flyout", IsDone = true, Priority = Priority.High },
-		new TodoItem { Title = "Стилізувати елементи через ResourceDictionary", IsDone = true, Priority = Priority.Normal },
-		new TodoItem { Title = "Додати діаграму GraphicsView", IsDone = false, Priority = Priority.High },
-		new TodoItem { Title = "Показати видалення свайпом через SwipeView", IsDone = false, Priority = Priority.Normal },
-		new TodoItem { Title = "Опублікувати 🚀", IsDone = false, Priority = Priority.Low },
-	};
-
-	public ObservableCollection<GalleryPhoto> GalleryPhotos { get; } = new()
-	{
-		new GalleryPhoto { ImageUrl = "https://picsum.photos/seed/maui1/600/360", Caption = "CarouselView — гортайте між слайдами" },
-		new GalleryPhoto { ImageUrl = "https://picsum.photos/seed/maui2/600/360", Caption = "IndicatorView — показує поточну позицію" },
-		new GalleryPhoto { ImageUrl = "https://picsum.photos/seed/maui3/600/360", Caption = "Image — завантаження з віддаленого Uri" },
-		new GalleryPhoto { ImageUrl = "https://picsum.photos/seed/maui4/600/360", Caption = "Усе пов'язано через прив'язку даних, без code-behind" },
-	};
+	public ObservableCollection<TodoItem> Todos { get; } = new();
 
 	public CollectionsViewModel()
 	{
-		Title = "Колекції";
+		SeedTodos();
+		ApplyLocalization();
 	}
+
+	protected override void ApplyLocalization()
+	{
+		Title = AppResources.Get("Collections_Title");
+		foreach (var todo in Todos.Where(t => t.TitleResourceKey is not null))
+		{
+			todo.Title = AppResources.Get(todo.TitleResourceKey!);
+		}
+	}
+
+	private void SeedTodos()
+	{
+		Todos.Add(CreateSeed("Collections_Todo1", Priority.High, isDone: true));
+		Todos.Add(CreateSeed("Collections_Todo2", Priority.Normal, isDone: true));
+		Todos.Add(CreateSeed("Collections_Todo3", Priority.High, isDone: false));
+		Todos.Add(CreateSeed("Collections_Todo4", Priority.Normal, isDone: false));
+		Todos.Add(CreateSeed("Collections_Todo5", Priority.Low, isDone: false));
+	}
+
+	private static TodoItem CreateSeed(string resourceKey, Priority priority, bool isDone)
+		=> new()
+		{
+			TitleResourceKey = resourceKey,
+			Title = AppResources.Get(resourceKey),
+			Priority = priority,
+			IsDone = isDone
+		};
 
 	[RelayCommand]
 	private void AddTodo()
@@ -61,7 +75,11 @@ public partial class CollectionsViewModel : BaseViewModel
 	{
 		IsRefreshing = true;
 		await Task.Delay(800);
-		Todos.Add(new TodoItem { Title = $"Оновлений елемент о {DateTime.Now:T}", Priority = Priority.Low });
+		Todos.Add(new TodoItem
+		{
+			Title = AppResources.Format("Collections_RefreshedItemFormat", DateTime.Now),
+			Priority = Priority.Low
+		});
 		IsRefreshing = false;
 	}
 }
