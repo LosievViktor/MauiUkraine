@@ -46,6 +46,7 @@
 
   <data name="Home_HeroTitle" xml:space="preserve"><value>MAUI Controls Showcase</value></data>
   <data name="Home_HeroSubtitle" xml:space="preserve"><value>All the essential .NET MAUI UI controls in one convenient overview. Pick a category below or use the side menu (swipe from the left edge or tap ☰). Made in Ukraine by Viktor Losiev.</value></data>
+  <data name="Home_MenuSection" xml:space="preserve"><value>Pages</value></data>
   <data name="Home_AboutButton" xml:space="preserve"><value>About this sample</value></data>
   <data name="Home_AboutAlertTitle" xml:space="preserve"><value>About this sample</value></data>
   <data name="Home_AboutAlertMessage" xml:space="preserve"><value>This app is a single .NET MAUI project built to showcase the breadth of the framework on Android, iOS, macOS, and Windows from one shared C#/XAML codebase.</value></data>

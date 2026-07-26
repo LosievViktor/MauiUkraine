@@ -46,6 +46,7 @@
 
   <data name="Home_HeroTitle" xml:space="preserve"><value>Вітрина елементів MAUI</value></data>
   <data name="Home_HeroSubtitle" xml:space="preserve"><value>Усі основні елементи інтерфейсу .NET MAUI в одному зручному огляді. Оберіть категорію нижче або скористайтеся бічним меню (проведіть від лівого краю або натисніть ☰). Розроблено в Україні Лосєвим Віктором.</value></data>
+  <data name="Home_MenuSection" xml:space="preserve"><value>Сторінки</value></data>
   <data name="Home_AboutButton" xml:space="preserve"><value>Про цей приклад</value></data>
   <data name="Home_AboutAlertTitle" xml:space="preserve"><value>Про цей приклад</value></data>
   <data name="Home_AboutAlertMessage" xml:space="preserve"><value>Цей застосунок — єдиний проєкт .NET MAUI, створений вручну, щоб показати широту можливостей фреймворку на Android, iOS, macOS і Windows з однієї спільної кодової бази C#/XAML.</value></data>
