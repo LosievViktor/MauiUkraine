@@ -1,22 +1,13 @@
 # MAUI Controls Showcase
 
-A single-project **.NET 10 MAUI** app whose only job is to demonstrate core .NET MAUI
-UI capabilities - one shared C#/XAML codebase targeting Android, iOS, Mac Catalyst and
-Windows. It's built with **Shell navigation** (flyout menu) and the **MVVM** pattern via
-**CommunityToolkit.Mvvm**, plus **CommunityToolkit.Maui** for Toast/Snackbar.
+
+A single-project **.NET 8 MAUI** app whose only job is to demonstrate the breadth of what
+.NET MAUI can do, with Ukrainian language user interface.
 
 ## Languages
 
 The UI supports **English** (default) and **Ukrainian**. Choose the language on the Home page;
 the selection is saved and restored on the next launch.
-
-## UI automation tests
-
-Windows UI tests using **FlaUI** live in a separate solution:
-
-`C:\repository\tests\MauiControlsShowcase.UITests.sln`
-
-See `C:\repository\tests\README.md` for how to build the app and run the tests.
 
 ## What's inside
 
@@ -70,23 +61,3 @@ To run it you need a machine with:
    ...or just open `MauiControlsShowcase.csproj` in **Visual Studio 2022** (Windows) or
    **Visual Studio Code with the .NET MAUI extension** / **JetBrains Rider**, pick a target
    (Android emulator, Windows Machine, Mac Catalyst, or an iOS simulator on a Mac), and hit Run.
-
-### Notes
-
-- **CommunityToolkit.Maui** uses a floating `12.*` version in the `.csproj` so restore
-  grabs a compatible release - if you want a fully reproducible build, pin it to a
-  specific version after your first successful restore.
-- **Toast / Snackbar on Windows** require extra setup (already applied in this repo):
-  `SetShouldEnableSnackbarOnWindows(true)` in `MauiProgram.cs`, plus toast COM
-  activation entries in `Platforms/Windows/Package.appxmanifest`.
-- If anything doesn't compile first try, it's most likely a small API/version drift
-  between when this was written and whatever MAUI/toolkit version you restore - the
-  fixes are almost always one-line (e.g. a renamed property), the app's overall
-  structure will still be correct.
-
-## Why Shell + MVVM + CommunityToolkit.Mvvm
-
-Shell's flyout gives free platform-idiomatic navigation (a proper hamburger menu on
-phones, a permanent side rail on desktop/tablet), while CommunityToolkit.Mvvm's source
-generators keep the view-model code short enough that each page's XAML and C# both fit
-on one screen, so the controls stay the star of the show.

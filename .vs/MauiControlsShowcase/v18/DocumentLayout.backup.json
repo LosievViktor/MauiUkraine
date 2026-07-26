@@ -40,13 +40,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 153,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -57,8 +53,7 @@
               "RelativeToolTip": "Resources\\Strings\\AppResources.uk.resx",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAKAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-07-26T14:20:20.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-26T14:20:20.897Z"
             },
             {
               "$type": "Document",
@@ -70,8 +65,7 @@
               "RelativeToolTip": "AppShell.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-07-26T12:29:26.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-26T12:29:26.267Z"
             },
             {
               "$type": "Document",
@@ -96,8 +90,7 @@
               "RelativeToolTip": "obj\\x64\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\Platforms\\Windows\\App.g.i.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAmwEQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T12:27:48.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-26T12:27:48.243Z"
             },
             {
               "$type": "Document",
@@ -113,6 +106,10 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "MauiProgram.cs",
@@ -122,8 +119,7 @@
               "RelativeToolTip": "MauiProgram.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T12:19:15.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-26T12:19:15.6Z"
             },
             {
               "$type": "Document",
@@ -135,8 +131,7 @@
               "RelativeToolTip": "Views\\AlertsAndDialogsPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-07-26T12:25:19.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-26T12:25:19.35Z"
             },
             {
               "$type": "Document",
@@ -148,13 +143,12 @@
               "RelativeToolTip": "Resources\\Strings\\AppResources.resx",
               "ViewState": "AgIAABUAAAAAAAAAAAAgwC8AAADyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-07-26T13:47:14.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-26T13:47:14.45Z"
             }
           ]
         },
         {
-          "DockedWidth": 130,
+          "DockedWidth": 177,
           "SelectedChildIndex": -1,
           "Children": [
             {
