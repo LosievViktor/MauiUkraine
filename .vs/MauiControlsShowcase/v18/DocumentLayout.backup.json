@@ -44,16 +44,8 @@
           "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppResources.uk.resx",
-              "DocumentMoniker": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
-              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.uk.resx",
-              "ToolTip": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
-              "RelativeToolTip": "Resources\\Strings\\AppResources.uk.resx",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAKAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-07-26T14:20:20.897Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
@@ -100,14 +92,26 @@
               "RelativeDocumentMoniker": "Views\\HomePage.xaml",
               "ToolTip": "C:\\repository\\apps\\MauiUkraine\\Views\\HomePage.xaml",
               "RelativeToolTip": "Views\\HomePage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-07-26T12:26:31.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppResources.uk.resx",
+              "DocumentMoniker": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
+              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.uk.resx",
+              "ToolTip": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
+              "RelativeToolTip": "Resources\\Strings\\AppResources.uk.resx",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAKAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-07-26T14:20:20.897Z"
             },
             {
               "$type": "Document",
@@ -117,7 +121,7 @@
               "RelativeDocumentMoniker": "MauiProgram.cs",
               "ToolTip": "C:\\repository\\apps\\MauiUkraine\\MauiProgram.cs",
               "RelativeToolTip": "MauiProgram.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAIBJwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-26T12:19:15.6Z"
             },
