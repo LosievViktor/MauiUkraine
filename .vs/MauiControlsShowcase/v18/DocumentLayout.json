@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\repository\\apps\\MauiUkraine\\",
+  "WorkspaceRootPath": "C:\\repository\\MauiUkraine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\apps\\mauiukraine\\resources\\strings\\appresources.uk.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:resources\\strings\\appresources.uk.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\apps\\mauiukraine\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\apps\\mauiukraine\\views\\alertsanddialogspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\resources\\strings\\appresources.uk.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:resources\\strings\\appresources.uk.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\views\\alertsanddialogspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:views\\alertsanddialogspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\apps\\mauiukraine\\resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -26,47 +30,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 153,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\repository\\MauiUkraine\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\repository\\MauiUkraine\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-26T16:13:42.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AppResources.uk.resx",
-              "DocumentMoniker": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
+              "DocumentMoniker": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
               "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.uk.resx",
-              "ToolTip": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
+              "ToolTip": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
               "RelativeToolTip": "Resources\\Strings\\AppResources.uk.resx",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAKAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-07-26T14:20:20.897Z"
+              "WhenOpened": "2026-07-26T14:20:20.897Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\repository\\apps\\MauiUkraine\\MauiProgram.cs",
+              "DocumentMoniker": "C:\\repository\\MauiUkraine\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MauiProgram.cs",
-              "ToolTip": "C:\\repository\\apps\\MauiUkraine\\MauiProgram.cs",
+              "ToolTip": "C:\\repository\\MauiUkraine\\MauiProgram.cs",
               "RelativeToolTip": "MauiProgram.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAIBJwEEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T12:19:15.6Z"
+              "WhenOpened": "2026-07-26T12:19:15.6Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AlertsAndDialogsPage.xaml",
-              "DocumentMoniker": "C:\\repository\\apps\\MauiUkraine\\Views\\AlertsAndDialogsPage.xaml",
+              "DocumentMoniker": "C:\\repository\\MauiUkraine\\Views\\AlertsAndDialogsPage.xaml",
               "RelativeDocumentMoniker": "Views\\AlertsAndDialogsPage.xaml",
-              "ToolTip": "C:\\repository\\apps\\MauiUkraine\\Views\\AlertsAndDialogsPage.xaml",
+              "ToolTip": "C:\\repository\\MauiUkraine\\Views\\AlertsAndDialogsPage.xaml",
               "RelativeToolTip": "Views\\AlertsAndDialogsPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -74,11 +93,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AppResources.resx",
-              "DocumentMoniker": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.resx",
+              "DocumentMoniker": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.resx",
               "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.resx",
-              "ToolTip": "C:\\repository\\apps\\MauiUkraine\\Resources\\Strings\\AppResources.resx",
+              "ToolTip": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.resx",
               "RelativeToolTip": "Resources\\Strings\\AppResources.resx",
               "ViewState": "AgIAABUAAAAAAAAAAAAgwC8AAADyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",

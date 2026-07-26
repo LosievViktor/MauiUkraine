@@ -5,10 +5,17 @@
        xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
        Title="{loc:Translate App_Title}"
        FlyoutBehavior="Flyout"
+       AutomationProperties.AutomationId="app_shell"
        x:Class="MauiControlsShowcase.AppShell">
 
+    <!-- Menu / home button that opens the left flyout; AutomationId enables UI tests -->
+    <Shell.FlyoutIcon>
+        <FileImageSource File="menu.png" AutomationId="shell_home_button" />
+    </Shell.FlyoutIcon>
+
     <Shell.FlyoutHeader>
-        <Grid Padding="20,50,20,20" RowSpacing="4" BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}">
+        <Grid Padding="20,50,20,20" RowSpacing="4" BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"
+              AutomationProperties.AutomationId="flyout_header">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -18,53 +25,68 @@
                    Text="{loc:Translate App_Title}"
                    FontSize="20"
                    FontAttributes="Bold"
-                   TextColor="White" />
+                   TextColor="White"
+                   AutomationProperties.AutomationId="flyout_header_title" />
             <Label x:Name="FlyoutHeaderTagline"
                    Grid.Row="1"
                    Text="{loc:Translate App_Tagline}"
                    FontSize="12"
-                   TextColor="#DCD6FF" />
+                   TextColor="#DCD6FF"
+                   AutomationProperties.AutomationId="flyout_header_tagline" />
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem x:Name="HomeFlyout" Title="{loc:Translate Flyout_Home}">
+    <FlyoutItem x:Name="HomeFlyout"
+                Title="{loc:Translate Flyout_Home}"
+                AutomationProperties.AutomationId="flyout_home">
         <ShellContent Title="{loc:Translate Flyout_Home}"
                       Route="home"
                       ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
 
-    <FlyoutItem x:Name="ButtonsFlyout" Title="{loc:Translate Flyout_Buttons}">
+    <FlyoutItem x:Name="ButtonsFlyout"
+                Title="{loc:Translate Flyout_Buttons}"
+                AutomationProperties.AutomationId="flyout_buttons">
         <ShellContent Title="{loc:Translate Flyout_Buttons}"
                       Route="buttons"
                       ContentTemplate="{DataTemplate views:ButtonsAndInputsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem x:Name="SelectionFlyout" Title="{loc:Translate Flyout_Selection}">
+    <FlyoutItem x:Name="SelectionFlyout"
+                Title="{loc:Translate Flyout_Selection}"
+                AutomationProperties.AutomationId="flyout_selection">
         <ShellContent Title="{loc:Translate Flyout_Selection}"
                       Route="selection"
                       ContentTemplate="{DataTemplate views:SelectionControlsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem x:Name="CollectionsFlyout" Title="{loc:Translate Flyout_Collections}">
+    <FlyoutItem x:Name="CollectionsFlyout"
+                Title="{loc:Translate Flyout_Collections}"
+                AutomationProperties.AutomationId="flyout_collections">
         <ShellContent Title="{loc:Translate Flyout_Collections}"
                       Route="collections"
                       ContentTemplate="{DataTemplate views:CollectionsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem x:Name="IndicatorsFlyout" Title="{loc:Translate Flyout_Indicators}">
+    <FlyoutItem x:Name="IndicatorsFlyout"
+                Title="{loc:Translate Flyout_Indicators}"
+                AutomationProperties.AutomationId="flyout_indicators">
         <ShellContent Title="{loc:Translate Flyout_Indicators}"
                       Route="indicators"
                       ContentTemplate="{DataTemplate views:IndicatorsAndProgressPage}" />
     </FlyoutItem>
 
-    <FlyoutItem x:Name="AlertsFlyout" Title="{loc:Translate Flyout_Alerts}">
+    <FlyoutItem x:Name="AlertsFlyout"
+                Title="{loc:Translate Flyout_Alerts}"
+                AutomationProperties.AutomationId="flyout_alerts">
         <ShellContent Title="{loc:Translate Flyout_Alerts}"
                       Route="alerts"
                       ContentTemplate="{DataTemplate views:AlertsAndDialogsPage}" />
     </FlyoutItem>
 
     <Shell.FlyoutFooter>
-        <Grid Padding="20" ColumnSpacing="8">
+        <Grid Padding="20" ColumnSpacing="8"
+              AutomationProperties.AutomationId="flyout_footer">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -73,7 +95,8 @@
                    Text="{loc:Translate Flyout_Footer}"
                    FontSize="11"
                    TextColor="Gray"
-                   VerticalOptions="Center" />
+                   VerticalOptions="Center"
+                   AutomationProperties.AutomationId="flyout_footer_label" />
         </Grid>
     </Shell.FlyoutFooter>
 

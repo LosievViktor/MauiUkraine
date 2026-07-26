@@ -19,19 +19,35 @@
             <Label Text="Button" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <FlexLayout Wrap="Wrap" JustifyContent="Start" AlignItems="Center">
-                    <Button Text="{loc:Translate Buttons_Filled}" Margin="0,0,10,10" />
-                    <Button Text="{loc:Translate Buttons_Outline}" Style="{StaticResource OutlineButton}" Margin="0,0,10,10" />
-                    <Button Text="{loc:Translate Buttons_Disabled}" IsEnabled="False" Margin="0,0,10,10" />
+                    <Button Text="{loc:Translate Buttons_Filled}"
+                            Margin="0,0,10,10"
+                            AutomationProperties.AutomationId="buttons_filled_button" />
+                    <Button Text="{loc:Translate Buttons_Outline}"
+                            Style="{StaticResource OutlineButton}"
+                            Margin="0,0,10,10"
+                            AutomationProperties.AutomationId="buttons_outline_button" />
+                    <Button Text="{loc:Translate Buttons_Disabled}"
+                            IsEnabled="False"
+                            Margin="0,0,10,10"
+                            AutomationProperties.AutomationId="buttons_disabled_button" />
                 </FlexLayout>
             </Border>
 
             <Label Text="Entry" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="10">
-                    <Entry Placeholder="{loc:Translate Buttons_FullNamePlaceholder}" Text="{Binding FullName}" ClearButtonVisibility="WhileEditing" />
-                    <Entry Placeholder="{loc:Translate Buttons_PasswordPlaceholder}" Text="{Binding Password}" IsPassword="True" />
-                    <Entry Placeholder="{loc:Translate Buttons_NumericPlaceholder}" Keyboard="Numeric" />
-                    <Label>
+                    <Entry Placeholder="{loc:Translate Buttons_FullNamePlaceholder}"
+                           Text="{Binding FullName}"
+                           ClearButtonVisibility="WhileEditing"
+                           AutomationProperties.AutomationId="buttons_fullname_entry" />
+                    <Entry Placeholder="{loc:Translate Buttons_PasswordPlaceholder}"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           AutomationProperties.AutomationId="buttons_password_entry" />
+                    <Entry Placeholder="{loc:Translate Buttons_NumericPlaceholder}"
+                           Keyboard="Numeric"
+                           AutomationProperties.AutomationId="buttons_numeric_entry" />
+                    <Label AutomationProperties.AutomationId="buttons_hello_label">
                         <Label.Text>
                             <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Buttons_HelloFormat">
                                 <Binding Path="FullName" />
@@ -45,8 +61,12 @@
             <Label Text="SearchBar" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="8">
-                    <SearchBar Placeholder="{loc:Translate Buttons_SearchPlaceholder}" Text="{Binding SearchQuery}" />
-                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding SearchResults}" Spacing="4">
+                    <SearchBar Placeholder="{loc:Translate Buttons_SearchPlaceholder}"
+                               Text="{Binding SearchQuery}"
+                               AutomationProperties.AutomationId="buttons_search_bar" />
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding SearchResults}"
+                                         Spacing="4"
+                                         AutomationProperties.AutomationId="buttons_search_results">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="x:String">
                                 <Label Text="{Binding .}" Padding="8,5" BackgroundColor="{StaticResource Secondary}" />

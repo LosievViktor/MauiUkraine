@@ -6,7 +6,8 @@
              xmlns:services="clr-namespace:MauiControlsShowcase.Services"
              x:Class="MauiControlsShowcase.Views.IndicatorsAndProgressPage"
              x:DataType="vm:IndicatorsAndProgressViewModel"
-             Title="{loc:Translate Indicators_Title}">
+             Title="{loc:Translate Indicators_Title}"
+             AutomationProperties.AutomationId="page_indicators">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
@@ -18,17 +19,23 @@
             <Label Text="ActivityIndicator" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                    <ActivityIndicator Grid.Column="0" IsRunning="{Binding IsActivityRunning}" />
+                    <ActivityIndicator Grid.Column="0"
+                                       IsRunning="{Binding IsActivityRunning}"
+                                       AutomationProperties.AutomationId="indicators_activity" />
                     <Label Grid.Column="1" Text="{loc:Translate Indicators_Enable}" VerticalOptions="Center" />
-                    <Switch Grid.Column="2" IsToggled="{Binding IsActivityRunning}" />
+                    <Switch Grid.Column="2"
+                            IsToggled="{Binding IsActivityRunning}"
+                            AutomationProperties.AutomationId="indicators_activity_switch" />
                 </Grid>
             </Border>
 
             <Label Text="ProgressBar" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="10">
-                    <ProgressBar Progress="{Binding Progress}" />
-                    <Label Style="{StaticResource CaptionLabel}">
+                    <ProgressBar Progress="{Binding Progress}"
+                                 AutomationProperties.AutomationId="indicators_progress_bar" />
+                    <Label Style="{StaticResource CaptionLabel}"
+                           AutomationProperties.AutomationId="indicators_progress_label">
                         <Label.Text>
                             <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Indicators_ProgressFormat">
                                 <Binding Path="Progress" />
@@ -36,7 +43,10 @@
                             </MultiBinding>
                         </Label.Text>
                     </Label>
-                    <Button Text="{loc:Translate Indicators_Simulate}" Command="{Binding StartUploadCommand}" HorizontalOptions="Start" />
+                    <Button Text="{loc:Translate Indicators_Simulate}"
+                            Command="{Binding StartUploadCommand}"
+                            HorizontalOptions="Start"
+                            AutomationProperties.AutomationId="indicators_simulate_button" />
                 </VerticalStackLayout>
             </Border>
 

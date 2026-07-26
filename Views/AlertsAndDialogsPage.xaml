@@ -5,7 +5,8 @@
              xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
              x:Class="MauiControlsShowcase.Views.AlertsAndDialogsPage"
              x:DataType="vm:AlertsAndDialogsViewModel"
-             Title="{loc:Translate Alerts_Title}">
+             Title="{loc:Translate Alerts_Title}"
+             AutomationProperties.AutomationId="page_alerts">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
@@ -15,29 +16,51 @@
                    Style="{StaticResource PageSubtitleLabel}" />
 
             <Border Style="{StaticResource CardBorder}">
-                <Label Text="{Binding LastResult}" LineBreakMode="WordWrap" />
+                <Label Text="{Binding LastResult}"
+                       LineBreakMode="WordWrap"
+                       AutomationProperties.AutomationId="alerts_last_result" />
             </Border>
 
             <Label Text="{loc:Translate Alerts_NativeSection}" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <FlexLayout Wrap="Wrap" JustifyContent="Start">
-                    <Button Text="DisplayAlert" Command="{Binding ShowAlertCommand}" Margin="0,0,8,8" />
-                    <Button Text="DisplayActionSheet" Command="{Binding ShowActionSheetCommand}" Margin="0,0,8,8" />
-                    <Button Text="DisplayPromptAsync" Command="{Binding ShowPromptCommand}" Margin="0,0,8,8" />
+                    <Button Text="DisplayAlert"
+                            Command="{Binding ShowAlertCommand}"
+                            Margin="0,0,8,8"
+                            AutomationProperties.AutomationId="alerts_display_alert" />
+                    <Button Text="DisplayActionSheet"
+                            Command="{Binding ShowActionSheetCommand}"
+                            Margin="0,0,8,8"
+                            AutomationProperties.AutomationId="alerts_display_action_sheet" />
+                    <Button Text="DisplayPromptAsync"
+                            Command="{Binding ShowPromptCommand}"
+                            Margin="0,0,8,8"
+                            AutomationProperties.AutomationId="alerts_display_prompt" />
                 </FlexLayout>
             </Border>
 
             <Label Text="{loc:Translate Alerts_PopupSection}" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <FlexLayout Wrap="Wrap" JustifyContent="Start">
-                    <Button Text="{loc:Translate Alerts_ShowToast}" Style="{StaticResource OutlineButton}" Command="{Binding ShowToastCommand}" Margin="0,0,8,8" />
-                    <Button Text="{loc:Translate Alerts_ShowSnackbar}" Style="{StaticResource OutlineButton}" Command="{Binding ShowSnackbarCommand}" Margin="0,0,8,8" />
+                    <Button Text="{loc:Translate Alerts_ShowToast}"
+                            Style="{StaticResource OutlineButton}"
+                            Command="{Binding ShowToastCommand}"
+                            Margin="0,0,8,8"
+                            AutomationProperties.AutomationId="alerts_show_toast" />
+                    <Button Text="{loc:Translate Alerts_ShowSnackbar}"
+                            Style="{StaticResource OutlineButton}"
+                            Command="{Binding ShowSnackbarCommand}"
+                            Margin="0,0,8,8"
+                            AutomationProperties.AutomationId="alerts_show_snackbar" />
                 </FlexLayout>
             </Border>
 
             <Label Text="{loc:Translate Alerts_ModalSection}" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
-                <Button Text="{loc:Translate Alerts_OpenModal}" Command="{Binding OpenModalCommand}" HorizontalOptions="Start" />
+                <Button Text="{loc:Translate Alerts_OpenModal}"
+                        Command="{Binding OpenModalCommand}"
+                        HorizontalOptions="Start"
+                        AutomationProperties.AutomationId="alerts_open_modal" />
             </Border>
 
         </VerticalStackLayout>

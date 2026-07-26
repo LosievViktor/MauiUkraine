@@ -6,7 +6,8 @@
              xmlns:services="clr-namespace:MauiControlsShowcase.Services"
              x:Class="MauiControlsShowcase.Views.SelectionControlsPage"
              x:DataType="vm:SelectionControlsViewModel"
-             Title="{loc:Translate Selection_Title}">
+             Title="{loc:Translate Selection_Title}"
+             AutomationProperties.AutomationId="page_selection">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
@@ -26,14 +27,17 @@
                             </MultiBinding>
                         </Label.Text>
                     </Label>
-                    <Switch Grid.Column="1" IsToggled="{Binding IsSwitchOn}" />
+                    <Switch Grid.Column="1"
+                            IsToggled="{Binding IsSwitchOn}"
+                            AutomationProperties.AutomationId="selection_notifications_switch" />
                 </Grid>
             </Border>
 
             <Label Text="CheckBox" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <HorizontalStackLayout Spacing="8">
-                    <CheckBox IsChecked="{Binding IsChecked}" />
+                    <CheckBox IsChecked="{Binding IsChecked}"
+                              AutomationProperties.AutomationId="selection_checkbox" />
                     <Label Text="{loc:Translate Selection_CheckboxLabel}" VerticalOptions="Center" />
                 </HorizontalStackLayout>
             </Border>
@@ -43,10 +47,18 @@
                 <VerticalStackLayout Spacing="6"
                                      RadioButtonGroup.GroupName="favoriteColorGroup"
                                      RadioButtonGroup.SelectedValue="{Binding SelectedColor}">
-                    <RadioButton Content="{loc:Translate Selection_Red}" Value="Red" />
-                    <RadioButton Content="{loc:Translate Selection_Green}" Value="Green" />
-                    <RadioButton Content="{loc:Translate Selection_Blue}" Value="Blue" />
-                    <Label Style="{StaticResource CaptionLabel}" Margin="0,4,0,0">
+                    <RadioButton Content="{loc:Translate Selection_Red}"
+                                 Value="Red"
+                                 AutomationProperties.AutomationId="selection_color_red" />
+                    <RadioButton Content="{loc:Translate Selection_Green}"
+                                 Value="Green"
+                                 AutomationProperties.AutomationId="selection_color_green" />
+                    <RadioButton Content="{loc:Translate Selection_Blue}"
+                                 Value="Blue"
+                                 AutomationProperties.AutomationId="selection_color_blue" />
+                    <Label Style="{StaticResource CaptionLabel}"
+                           Margin="0,4,0,0"
+                           AutomationProperties.AutomationId="selection_selected_label">
                         <Label.Text>
                             <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_SelectedFormat">
                                 <Binding Path="SelectedColor" Converter="{StaticResource ColorNameConverter}" />
@@ -60,8 +72,12 @@
             <Label Text="Picker" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="6">
-                    <Picker Title="{loc:Translate Selection_PlatformTitle}" ItemsSource="{Binding Platforms}" SelectedItem="{Binding SelectedPlatform}" />
-                    <Label Style="{StaticResource CaptionLabel}">
+                    <Picker Title="{loc:Translate Selection_PlatformTitle}"
+                            ItemsSource="{Binding Platforms}"
+                            SelectedItem="{Binding SelectedPlatform}"
+                            AutomationProperties.AutomationId="selection_platform_picker" />
+                    <Label Style="{StaticResource CaptionLabel}"
+                           AutomationProperties.AutomationId="selection_platform_label">
                         <Label.Text>
                             <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_BuildForFormat">
                                 <Binding Path="SelectedPlatform" />
@@ -77,11 +93,21 @@
                 <VerticalStackLayout Spacing="10">
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" RowSpacing="10" ColumnSpacing="10">
                         <Label Grid.Row="0" Grid.Column="0" Text="{loc:Translate Selection_Date}" VerticalOptions="Center" />
-                        <DatePicker Grid.Row="0" Grid.Column="1" Date="{Binding SelectedDate}" HorizontalOptions="Start" />
+                        <DatePicker Grid.Row="0"
+                                    Grid.Column="1"
+                                    Date="{Binding SelectedDate}"
+                                    HorizontalOptions="Start"
+                                    AutomationProperties.AutomationId="selection_date_picker" />
                         <Label Grid.Row="1" Grid.Column="0" Text="{loc:Translate Selection_Time}" VerticalOptions="Center" />
-                        <TimePicker Grid.Row="1" Grid.Column="1" Time="{Binding SelectedTime}" HorizontalOptions="Start" />
+                        <TimePicker Grid.Row="1"
+                                    Grid.Column="1"
+                                    Time="{Binding SelectedTime}"
+                                    HorizontalOptions="Start"
+                                    AutomationProperties.AutomationId="selection_time_picker" />
                     </Grid>
-                    <Label Text="{Binding ScheduledSummary}" Style="{StaticResource CaptionLabel}" />
+                    <Label Text="{Binding ScheduledSummary}"
+                           Style="{StaticResource CaptionLabel}"
+                           AutomationProperties.AutomationId="selection_scheduled_label" />
                 </VerticalStackLayout>
             </Border>
 
@@ -96,15 +122,24 @@
                             </MultiBinding>
                         </Label.Text>
                     </Label>
-                    <Stepper Grid.Column="2" Value="{Binding StepperValue}" Minimum="1" Maximum="10" Increment="1" />
+                    <Stepper Grid.Column="2"
+                             Value="{Binding StepperValue}"
+                             Minimum="1"
+                             Maximum="10"
+                             Increment="1"
+                             AutomationProperties.AutomationId="selection_team_size_stepper" />
                 </Grid>
             </Border>
 
             <Label Text="Slider" Style="{StaticResource SectionHeaderLabel}" />
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="6">
-                    <Slider Minimum="0" Maximum="1" Value="{Binding SliderValue}" />
-                    <Label Style="{StaticResource CaptionLabel}">
+                    <Slider Minimum="0"
+                            Maximum="1"
+                            Value="{Binding SliderValue}"
+                            AutomationProperties.AutomationId="selection_volume_slider" />
+                    <Label Style="{StaticResource CaptionLabel}"
+                           AutomationProperties.AutomationId="selection_volume_label">
                         <Label.Text>
                             <MultiBinding Converter="{StaticResource FormatConverter}" ConverterParameter="Selection_VolumeFormat">
                                 <Binding Path="SliderValue" />

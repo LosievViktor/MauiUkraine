@@ -3,15 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:loc="clr-namespace:MauiControlsShowcase.MarkupExtensions"
              x:Class="MauiControlsShowcase.Views.DemoModalPage"
-             Title="{loc:Translate Modal_Title}">
+             Title="{loc:Translate Modal_Title}"
+             AutomationProperties.AutomationId="page_modal">
 
     <Grid Padding="24" RowDefinitions="*,Auto" RowSpacing="20">
         <VerticalStackLayout Grid.Row="0" Spacing="10" VerticalOptions="Center">
-            <Label Text="{loc:Translate Modal_Heading}" Style="{StaticResource PageTitleLabel}" HorizontalTextAlignment="Center" />
+            <Label Text="{loc:Translate Modal_Heading}"
+                   Style="{StaticResource PageTitleLabel}"
+                   HorizontalTextAlignment="Center"
+                   AutomationProperties.AutomationId="modal_heading" />
             <Label Text="{loc:Translate Modal_Body}"
-                   Style="{StaticResource PageSubtitleLabel}" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
+                   Style="{StaticResource PageSubtitleLabel}"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   AutomationProperties.AutomationId="modal_body" />
         </VerticalStackLayout>
-        <Button Grid.Row="1" Text="{loc:Translate Modal_Close}" Clicked="OnCloseClicked" HorizontalOptions="Fill" />
+        <Button Grid.Row="1"
+                Text="{loc:Translate Modal_Close}"
+                Clicked="OnCloseClicked"
+                HorizontalOptions="Fill"
+                AutomationProperties.AutomationId="modal_close_button" />
     </Grid>
 
 </ContentPage>

@@ -8,7 +8,8 @@
              x:Class="MauiControlsShowcase.Views.CollectionsPage"
              x:DataType="vm:CollectionsViewModel"
              x:Name="RootPage"
-             Title="{loc:Translate Collections_Title}">
+             Title="{loc:Translate Collections_Title}"
+             AutomationProperties.AutomationId="page_collections">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="8">
@@ -21,30 +22,44 @@
             <Border Style="{StaticResource CardBorder}">
                 <VerticalStackLayout Spacing="10">
                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                        <Entry Grid.Column="0" Placeholder="{loc:Translate Collections_NewTodoPlaceholder}" Text="{Binding NewTodoText}"
-                               ReturnCommand="{Binding AddTodoCommand}" />
-                        <Button Grid.Column="1" Text="{loc:Translate Collections_Add}" Command="{Binding AddTodoCommand}" />
+                        <Entry Grid.Column="0"
+                               Placeholder="{loc:Translate Collections_NewTodoPlaceholder}"
+                               Text="{Binding NewTodoText}"
+                               ReturnCommand="{Binding AddTodoCommand}"
+                               AutomationProperties.AutomationId="collections_new_todo_entry" />
+                        <Button Grid.Column="1"
+                                Text="{loc:Translate Collections_Add}"
+                                Command="{Binding AddTodoCommand}"
+                                AutomationProperties.AutomationId="collections_add_button" />
                     </Grid>
 
                     <Label Text="{loc:Translate Collections_Hint}" Style="{StaticResource CaptionLabel}" />
 
-                    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}" HeightRequest="280">
-                        <CollectionView ItemsSource="{Binding Todos}" SelectionMode="None">
+                    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                                 Command="{Binding RefreshCommand}"
+                                 HeightRequest="280"
+                                 AutomationProperties.AutomationId="collections_refresh">
+                        <CollectionView ItemsSource="{Binding Todos}"
+                                        SelectionMode="None"
+                                        AutomationProperties.AutomationId="collections_todo_list">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate x:DataType="models:TodoItem">
-                                    <SwipeView>
+                                    <SwipeView AutomationProperties.AutomationId="collections_todo_item">
                                         <SwipeView.RightItems>
                                             <SwipeItems>
                                                 <SwipeItem Text="{loc:Translate Collections_Delete}"
                                                            BackgroundColor="{StaticResource Danger}"
                                                            Command="{Binding Source={x:Reference RootPage}, Path=BindingContext.DeleteTodoCommand}"
-                                                           CommandParameter="{Binding .}" />
+                                                           CommandParameter="{Binding .}"
+                                                           AutomationProperties.AutomationId="collections_todo_delete" />
                                             </SwipeItems>
                                         </SwipeView.RightItems>
                                         <Grid Padding="4,10" ColumnDefinitions="6,Auto,*,Auto" ColumnSpacing="10">
                                             <BoxView Grid.Column="0" Color="{Binding Priority, Converter={StaticResource PriorityToColorConverter}}"
                                                      WidthRequest="6" CornerRadius="3" />
-                                            <CheckBox Grid.Column="1" IsChecked="{Binding IsDone}" />
+                                            <CheckBox Grid.Column="1"
+                                                      IsChecked="{Binding IsDone}"
+                                                      AutomationProperties.AutomationId="collections_todo_done" />
                                             <Label Grid.Column="2" Text="{Binding Title}" VerticalOptions="Center" LineBreakMode="TailTruncation"
                                                    TextDecorations="{Binding IsDone, Converter={StaticResource BoolToStrikethroughConverter}}"
                                                    Opacity="{Binding IsDone, Converter={StaticResource BoolToDoneOpacityConverter}}" />
@@ -61,7 +76,11 @@
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                             <CollectionView.EmptyView>
-                                <Label Text="{loc:Translate Collections_Empty}" HorizontalOptions="Center" Style="{StaticResource CaptionLabel}" Margin="0,20" />
+                                <Label Text="{loc:Translate Collections_Empty}"
+                                       HorizontalOptions="Center"
+                                       Style="{StaticResource CaptionLabel}"
+                                       Margin="0,20"
+                                       AutomationProperties.AutomationId="collections_empty_label" />
                             </CollectionView.EmptyView>
                         </CollectionView>
                     </RefreshView>
