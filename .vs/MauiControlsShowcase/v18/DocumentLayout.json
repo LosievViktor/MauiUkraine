@@ -1,108 +1,34 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\repository\\MauiUkraine\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\resources\\strings\\appresources.uk.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:resources\\strings\\appresources.uk.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\views\\alertsanddialogspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:views\\alertsanddialogspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|c:\\repository\\mauiukraine\\resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|MauiControlsShowcase.csproj|solutionrelative:resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 153,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\repository\\MauiUkraine\\AppShell.xaml",
-              "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "C:\\repository\\MauiUkraine\\AppShell.xaml",
-              "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-07-26T16:13:42.021Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\repository\\MauiUkraine\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "MauiProgram.cs",
-              "ToolTip": "C:\\repository\\MauiUkraine\\MauiProgram.cs",
-              "RelativeToolTip": "MauiProgram.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T12:19:15.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppResources.uk.resx",
-              "DocumentMoniker": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
-              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.uk.resx",
-              "ToolTip": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.uk.resx",
-              "RelativeToolTip": "Resources\\Strings\\AppResources.uk.resx",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAKAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-07-26T14:20:20.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AlertsAndDialogsPage.xaml",
-              "DocumentMoniker": "C:\\repository\\MauiUkraine\\Views\\AlertsAndDialogsPage.xaml",
-              "RelativeDocumentMoniker": "Views\\AlertsAndDialogsPage.xaml",
-              "ToolTip": "C:\\repository\\MauiUkraine\\Views\\AlertsAndDialogsPage.xaml",
-              "RelativeToolTip": "Views\\AlertsAndDialogsPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-07-26T12:25:19.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppResources.resx",
-              "DocumentMoniker": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.resx",
-              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.resx",
-              "ToolTip": "C:\\repository\\MauiUkraine\\Resources\\Strings\\AppResources.resx",
-              "RelativeToolTip": "Resources\\Strings\\AppResources.resx",
-              "ViewState": "AgIAABUAAAAAAAAAAAAgwC8AAADyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-07-26T13:47:14.45Z"
             }
           ]
         },
         {
-          "DockedWidth": 177,
+          "DockedWidth": 126,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
